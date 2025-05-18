@@ -114,6 +114,28 @@ gsap.from(".cta_title", {
     duration: 0.5
 });
 
+gsap.from(".subscription_title", {
+    scrollTrigger: {
+        trigger: ".subscription_title",
+        start: "top bottom",
+        toggleActions: "play none none reset"
+    },
+    x: -150,
+    opacity: 0,
+    duration: 0.5
+});
+
+gsap.from(".subscription_card_cont", {
+    scrollTrigger: {
+        trigger: ".subscription_card_cont",
+        start: "top bottom",
+        toggleActions: "play none none reset"
+    },
+    y: 150,
+    opacity: 0,
+    duration: 0.5
+});
+
 gsap.from(".platform_heading", {
     scrollTrigger: {
         trigger: ".platform_heading",
