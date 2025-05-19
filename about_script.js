@@ -34,7 +34,7 @@ function addImageScaleAnimation() {
                 end: "+=400% top",
                 scrub: 1
             },
-            scale: 1.4,
+            scale: 1.2,
             ease: "none"
         });
     });
