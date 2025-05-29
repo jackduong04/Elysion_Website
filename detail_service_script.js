@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.to(".preloader_cont", {
     y: "100%",
     opacity: 0.2,
-    duration: 1,
+    duration: 0.8,
     ease: "expo.in"
 });
 
@@ -21,6 +21,7 @@ dropdownBtn.addEventListener("click", (e) => {
     }
 });
 
+// Before after img
 let matchMedia = gsap.matchMedia();
 
 matchMedia.add({
@@ -54,28 +55,6 @@ matchMedia.add({
         }
     });
 });
-
-const haveAProject = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".cta_cont",
-        start: "bottom bottom",
-        end: "bottom center",
-        toggleActions: "play reverse play reverse"
-    }
-});
-haveAProject
-    .to(".body", {
-        backgroundColor: "#3c8989",
-        duration: 0.15
-    })
-    .to(".cta_title", {
-        color: "#f5f5f5",
-        duration: 0.15
-    })
-    .from(".cta_link", {
-        opacity: 0,
-        duration: 0.15
-    });
 
 // Fade in scroll animation
 var subsvDescConts = gsap.utils.toArray(".subsv_desc_cont");

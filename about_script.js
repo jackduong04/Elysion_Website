@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.to(".preloader_cont", {
     y: "100%",
     opacity: 0.2,
-    duration: 1,
+    duration: 0.8,
     ease: "expo.in"
 });
 
@@ -36,84 +36,20 @@ window.addEventListener("scroll", (e) => {
     lastScrollTop = scrollTop;
 });
 
-// Image scale animation
-function addImageScaleAnimation() {
-    gsap.utils.toArray(".aboutpg_individual_header_cont").forEach((aboutpg_individual_header_cont, index) => {
-        const image = document.querySelector(`#about-img-${index + 1} img`);
-        gsap.to(image, {
-            scrollTrigger: {
-                trigger: aboutpg_individual_header_cont,
-                start: "top top",
-                end: "+=400% top",
-                scrub: 1
-            },
-            scale: 1.2,
-            ease: "none"
-        });
-    });
-}
-addImageScaleAnimation();
+// Scroll box
+var scrollBoxActive = gsap.utils.toArray(".scroll_box_active");
 
-// Modify image clip-path on scroll
-function animateClipPath (
-    headerId,
-    imageId,
-    startClipPath,
-    endClipPath,
-    start = "top center",
-    end = "bottom top"
-) {
-    let header = document.querySelector(headerId);
-    let image = document.querySelector(imageId);
-    ScrollTrigger.create({
-        trigger: header,
-        start: start,
-        end: end,
-        onEnter: () => {
-            gsap.to(image, {
-                scrollTrigger: {
-                    trigger: header,
-                    start: start,
-                    end: end,
-                    scrub: true
-                },
-                clipPath: endClipPath,
-                ease: "none"
-            });
-        }
-    });
-};
-animateClipPath(
-    "#header-1",
-    "#about-img-1",
-    "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-    "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
-);
-
-const totalHeaders = 9;
-for (let i = 2; i <= totalHeaders; i++) {
-    let currentHeader = `#header-${i}`;
-    let prevImage = `#about-img-${i - 1}`;
-    let currentImage = `#about-img-${i}`;
-    animateClipPath(
-        currentHeader,
-        prevImage,
-        "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-        "top bottom",
-        "center center"
-    );
-    if (i < totalHeaders) {
-        animateClipPath(
-            currentHeader,
-            currentImage,
-            "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-            "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-            "center center",
-            "bottom top"
-        );
-    }
-}
+scrollBoxActive.forEach((scrollBoxActive) => {
+    gsap.to(scrollBoxActive, {
+        scrollTrigger: {
+            trigger: scrollBoxActive,
+            start: "top bottom",
+            end: "center top",
+            scrub: true
+        },
+        height: "120%"
+    })
+});
 
 // Footer color change
 gsap.to(".aboutpg_body", {
@@ -126,23 +62,13 @@ gsap.to(".aboutpg_body", {
     duration: 0.5
 });
 
-gsap.to(".sticky_bg_text", {
+gsap.to(".aboutpg_fixed_bg", {
     scrollTrigger: {
         trigger: ".footer",
         start: "top bottom",
         toggleActions: "play none none reverse"
     },
-    opacity: 0,
-    duration: 0.5
-});
-
-gsap.to(".aboutpg_img_list", {
-    scrollTrigger: {
-        trigger: ".footer",
-        start: "top bottom",
-        toggleActions: "play none none reverse"
-    },
-    opacity: 0,
+    display: "none",
     duration: 0.5
 });
 

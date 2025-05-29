@@ -46,8 +46,10 @@
     left: 0;
     z-index: 9;
     background-color: var(--normal-hover-color);
-    align-content: center;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .preloader_cont img {
@@ -250,11 +252,10 @@
     width: 20vw;
     height: calc(20vw / 1.65);
     background-color: var(--cultured-white-color);
-    align-content: center;
-    text-align: center;
-    opacity: 0;
     border-radius: 10px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: all 0.3s ease-in-out;
     padding: 0 20px;
 }
@@ -438,7 +439,7 @@
     font-size: 6rem;
     font-weight: 500;
     color: var(--maintext-color);
-    margin-bottom: 350px;
+    margin-bottom: 200px;
     text-align: center;
 }
 
@@ -446,7 +447,7 @@
     margin-bottom: 100px;
     font-size: 1.5rem;
     text-align: center;
-    color: #fff;
+    color: var(--maintext-color);
     line-height: 1.5;
 }
 
@@ -470,12 +471,12 @@
 /* garden subscription */
 .garden_subscription_cont {
     width: 80vw;
-    margin: 400px auto;
+    margin: 300px auto;
     justify-items: center;
 }
 
 .subscription_title h1 {
-    font-size: 8rem;
+    font-size: 7rem;
     font-weight: 600;
     color: var(--maintext-color);
     text-align: center;
@@ -582,8 +583,10 @@
     height: 500px;
     border-radius: 30px;
     border: 9px solid var(--maintext-color);
-    align-content: center;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #e5e5e5;
 }
 
@@ -977,94 +980,80 @@
 }
 
 .aboutpg_main_cont {
+    max-width: 90vw;
+    margin: 200px auto;
+    margin-bottom: 100vh;
+}
+
+.aboutpg_fixed_bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
+    color: #fff;
 }
 
-.sticky_bg_cont {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-}
-
-.sticky_bg_cont p {
-    color: var(--cultured-white-color);
+.aboutpg_fixed_bg p {
     font-size: 1.5rem;
-    line-height: 2;
+    line-height: 1.5;
 }
 
-.aboutpg_individual_header_cont:not(:first-child) {
-    margin: 150vh 0;
-}
-.aboutpg_individual_header_cont:first-child {
-    margin: 100vh 0;
+.aboutpg_fixed_bg h1 {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
 }
 
-.aboutpg_individual_header_cont h1 {
-    font-size: 20rem;
-    font-weight: 700;
-    color: var(--cultured-white-color);
-}
-
-.aboutpg_individual_header_cont:nth-child(3) h1 {
-    color: var(--logo-landscape-color);
-}
-.aboutpg_individual_header_cont:nth-child(4) h1 {
-    color: var(--logo-pressurewashing-color);
-}
-.aboutpg_individual_header_cont:nth-child(5) h1 {
-    color: var(--logo-painting-color);
-}
-.aboutpg_individual_header_cont:nth-child(6) h1 {
-    color: var(--logo-marketready-color);
-}
-.aboutpg_individual_header_cont:nth-child(7) h1 {
-    color: var(--property-services-color);
-}
-
-.aboutpg_img_list {
-    position: fixed;
-    width: 50vw;
-    height: calc(50vw / 4 * 3);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.aboutpg_individual_img_cont {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-    overflow: hidden;
-}
-
-.aboutpg_individual_img_cont img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.aboutpg_story_card {
-    width: 100%;
-    height: 100%;
+.aboutpg_letter_list {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--normal-hover-color);
+}
+
+.each_letter_cont h1 {
+    font-size: 20rem;
+    color: var(--cultured-white-color);
+    margin-top: 50vh;
+    text-align: center;
+    font-weight: 700;
+}
+
+.scroll_box_cont {
+    width: 50vw;
+    height: 80vh;
+    margin: auto;
+    position: relative;
+}
+
+.scroll_box_active {
+    position: absolute;
+    overflow: hidden;
+    background-color: var(--cultured-white-color);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10%;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     color: var(--maintext-color);
-    padding: 30px;
+    padding: 0 60px;
 }
 
-.aboutpg_story_card h1 {
-    font-size: 3rem;
-    font-weight: 500;
+.scroll_box_active h2 {
+    font-size: 4rem;
+    margin-top: 20px;
 }
 
-.aboutpg_story_card p {
-    font-size: 1.5rem;
+.scroll_box_active p {
+    font-size: 1.7rem;
+}
+
+.scroll_box_staticbg {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
 }
 
 /* contact page */
@@ -1368,13 +1357,16 @@
         box-shadow: 0px -1.4rem 0px 0px var(--normal-hover-color) inset;
     }
 
-    .aboutpg_individual_header_cont h1 {
-        font-size: 18rem;
+    .scroll_box_cont {
+        width: 60vw;
     }
 
-    .aboutpg_img_list {
-        width: 55vw;
-        height: calc(55vw / 4 * 3);
+    .scroll_box_active h2 {
+        font-size: 3.4rem;
+    }
+
+    .scroll_box_active p {
+        font-size: 1.6rem;
     }
 
     .input_group h2, .input_message_box_title, .input_group input, .contact_form_cont form textarea {
@@ -1607,13 +1599,20 @@
         font-size: 1.4rem;
     }
 
-    .aboutpg_individual_header_cont h1 {
-        font-size: 16rem;
+    .each_letter_cont h1 {
+        font-size: 18rem;
     }
 
-    .aboutpg_img_list {
-        width: 60vw;
-        height: calc(60vw / 4 * 3);
+    .scroll_box_cont {
+        width: 65vw;
+    }
+
+    .scroll_box_active h2 {
+        font-size: 3.2rem;
+    }
+
+    .scroll_box_active p {
+        font-size: 1.5rem;
     }
 
     .contact_info_cont {
@@ -1716,12 +1715,8 @@
         margin: 0 auto;
     }
 
-    .cta_title {
-        text-align: center;
-    }
-
     .garden_subscription_cont {
-        margin: 300px auto;
+        margin: 200px auto;
     }
 
     .subscription_title h1 {
@@ -1850,21 +1845,20 @@
         font-size: 1.3rem;
     }
 
-    .aboutpg_individual_header_cont h1 {
-        font-size: 12rem;
+    .each_letter_cont h1 {
+        font-size: 16rem;
     }
 
-    .aboutpg_story_card h1 {
+    .scroll_box_cont {
+        width: 70vw;
+    }
+
+    .scroll_box_active h2 {
         font-size: 2.6rem;
     }
 
-    .sticky_bg_cont p, .aboutpg_story_card p {
-        font-size: 1.35rem;
-    }
-
-    .aboutpg_img_list {
-        width: 70vw;
-        height: calc(70vw / 4 * 3);
+    .scroll_box_active p, .aboutpg_fixed_bg p {
+        font-size: 1.4rem;
     }
 
     .contact_form_cont h1 {
@@ -1963,7 +1957,7 @@
 
     .cta_title {
         font-size: 3.4rem;
-        margin-bottom: 150px;
+        margin-bottom: 120px;
     }
 
     .cta_link {
@@ -2110,21 +2104,24 @@
         font-size: 1.2rem;
     }
 
-    .aboutpg_individual_header_cont h1 {
-        font-size: 8.5rem;
+    .each_letter_cont h1 {
+        font-size: 14rem;
     }
 
-    .aboutpg_story_card h1 {
-        font-size: 2.1rem;
+    .scroll_box_cont {
+        width: 75vw;
     }
 
-    .sticky_bg_cont p, .aboutpg_story_card p {
-        font-size: 1.2rem;
+    .scroll_box_active {
+        padding: 0 30px;
     }
 
-    .aboutpg_img_list {
-        width: 80vw;
-        height: calc(80vw / 4 * 3);
+    .scroll_box_active h2 {
+        font-size: 2.2rem;
+    }
+
+    .scroll_box_active p, .aboutpg_fixed_bg p {
+        font-size: 1.25rem;
     }
 
     .contact_form_cont {
@@ -2243,7 +2240,7 @@
     }
 
     .garden_subscription_cont {
-        margin: 200px auto;
+        margin: 150px auto;
     }
 
     .subscription_title h1 {
@@ -2411,29 +2408,24 @@
         font-size: 1.1rem;
     }
 
-    .aboutpg_individual_header_cont h1 {
-        font-size: 6rem;
+    .each_letter_cont h1 {
+        font-size: 12rem;
     }
 
-    .aboutpg_story_card h1 {
-        font-size: 1.4rem;
+    .scroll_box_cont {
+        width: 80vw;
     }
 
-    .sticky_bg_cont p, .aboutpg_story_card p {
-        font-size: 1rem;
+    .scroll_box_active {
+        padding: 0 20px;
     }
 
-    .aboutpg_individual_header_cont:not(:first-child) {
-        margin: 130vh 0;
+    .scroll_box_active h2 {
+        font-size: 1.8rem;
     }
 
-    .aboutpg_img_list {
-        width: 90vw;
-        height: calc(90vw / 4 * 3);
-    }
-
-    .aboutpg_story_card {
-        padding: 15px;
+    .scroll_box_active p, .aboutpg_fixed_bg p {
+        font-size: 1.1rem;
     }
 
     .contact_form_cont {

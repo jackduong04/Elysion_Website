@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.to(".preloader_cont", {
     y: "100%",
     opacity: 0.2,
-    duration: 1,
+    duration: 0.8,
     ease: "expo.in"
 });
 
@@ -20,51 +20,6 @@ dropdownBtn.addEventListener("click", (e) => {
         navbarLinks.classList.remove("active");
     }
 });
-
-// Dark theme change
-const aioServiceAnimate = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".homepg_service_cont",
-        start: "center bottom",
-        end: "center top",
-        toggleActions: "play reverse play reverse"
-    }
-});
-aioServiceAnimate
-    .to(".body", {
-        backgroundColor: "#333333",
-        duration: 0.15
-    })
-    .to(".aiotext", {
-        color: "#f5f5f5",
-        duration: 0.15
-    })
-    .to(".aio_support_text p", {
-        color: "#f5f5f5",
-        duration: 0.15
-    })
-    .to(".homepg_sublogo", {
-        opacity: 1,
-        duration: 0.15
-    }, 0.1);
-
-const haveAProject = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".cta_cont",
-        start: "bottom bottom",
-        end: "bottom center",
-        toggleActions: "play reverse play reverse"
-    }
-});
-haveAProject
-    .to(".body", {
-        backgroundColor: "#3c8989",
-        duration: 0.15
-    })
-    .to(".cta_title", {
-        color: "#f5f5f5",
-        duration: 0.15
-    });
 
 // Fade in scroll animation
 gsap.from(".navbar_cont", {

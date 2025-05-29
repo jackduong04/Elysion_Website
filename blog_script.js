@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.to(".preloader_cont", {
     y: "100%",
     opacity: 0.2,
-    duration: 1,
+    duration: 0.8,
     ease: "expo.in"
 });
 
