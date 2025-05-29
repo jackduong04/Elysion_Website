@@ -8,6 +8,19 @@ gsap.to(".preloader_cont", {
     ease: "expo.in"
 });
 
+// Small display navbar links dropdown
+const dropdownBtn = document.querySelector(".navbar_dropdown");
+const navbarLinks = document.querySelector(".navbar_links");
+
+dropdownBtn.addEventListener("click", (e) => {
+    const dropdownStatus = dropdownBtn.classList.toggle("active");
+    if (dropdownStatus == true) {
+        navbarLinks.classList.add("active");
+    } else {
+        navbarLinks.classList.remove("active");
+    }
+});
+
 // Navbar hide on down scroll
 navbar = document.querySelector(".navbar_cont");
 navbar.classList.add("active");
@@ -77,7 +90,7 @@ animateClipPath(
     "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
 );
 
-const totalHeaders = 7;
+const totalHeaders = 9;
 for (let i = 2; i <= totalHeaders; i++) {
     let currentHeader = `#header-${i}`;
     let prevImage = `#about-img-${i - 1}`;
@@ -119,7 +132,7 @@ gsap.to(".sticky_bg_text", {
         start: "top bottom",
         toggleActions: "play none none reverse"
     },
-    display: "none",
+    opacity: 0,
     duration: 0.5
 });
 
@@ -129,7 +142,8 @@ gsap.to(".aboutpg_img_list", {
         start: "top bottom",
         toggleActions: "play none none reverse"
     },
-    display: "none"
+    opacity: 0,
+    duration: 0.5
 });
 
 // Lenis

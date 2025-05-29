@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.1/dist/lenis.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="--page-color-theme: #1d6d28">
+<body class="body" style="--page-color-theme: #1d6d28">
     <!-- preloader -->
     <div class="preloader_cont">
         <img class="preloader_logo" src="assets/logo svg/elysion master.svg" alt="Elysion Master Logo">
@@ -24,8 +24,8 @@
     <!-- navbar -->
     <div class="navbar_cont">
         <div class="navbar_logo">
-            <img src="assets/logo svg/elysion master.svg" alt="Elysion Master Logo">
-            <a class="oswald" href="index.html">ELYSION</a>
+            <a href="index.html" class="navbar_logo_svg"><img src="assets/logo svg/elysion master.svg" alt="Elysion Master Logo"></a>
+            <a class="navbar_logo_text oswald" href="index.html">ELYSION</a>
         </div>
         <div class="navbar_links">
             <a class="quattrocento_bold" href="service.html">Services</a>
@@ -33,42 +33,69 @@
             <a class="quattrocento_bold" href="about.html">About</a>
             <a class="quattrocento_bold" href="contact.html">Contact</a>
         </div>
+        <div class="navbar_dropdown">
+            <svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" fill="none"/>
+                <g>
+                <path class="dropdown_svg" fill="#333333" d="M20 9l-8 8-8-8 1.414-1.414L12 14.172l6.586-6.586"/>
+                </g>
+            </svg>
+        </div>
     </div>
 
     <div class="individual_servicepg_hero">
         <h1 class="oswald">Landscaping</h1>
-        <p class="quattrocento_regular">Transform your outdoor space with professional landscaping and hardscaping services from our sister company, Natures Source. Whether you need lawn care, garden maintenance, fencing, deck installations, or complete landscape renovations, our expert team will design and build a beautiful, functional outdoor environment tailored to your needs.</p>
+        <p class="quattrocento_bold">We Don't Just Landscape — We Transform Properties</p>
+        <p class="quattrocento_regular">At Elysion, we approach landscaping with one simple goal: to make your outdoor space not just better, but unforgettable. Whether it's a clean-cut lawn, a detailed planting design, or a fully integrated outdoor makeover, we handle it all - from the first concept sketch to the final mow.</p>
+        <p class="quattrocento_regular">Our Auckland-based landscaping team blends creativity with craftsmanship to deliver results that are both stunning and sustainable.</p>
     </div>
 
-    <div class="subservice_link_section">
-        <div class="bfaft_cont">
-            <div class="img_bf">
-                <img src="assets/projects_img/kumeu_topdown3.jpg" alt="Before work">
-            </div>
-            <div class="img_aft">
-                <img src="assets/projects_img/kumeu_topdown4.jpg" alt="After work">
-            </div>
+    <div class="bfaft_cont">
+        <div class="img_bf">
+            <img src="assets/projects_img/kumeu_topdown4.jpg" alt="Before work">
         </div>
-        <div class="subsv_links">
-            <a class="subsv_individual_link quattrocento_bold" href="/">Softscaping</a>
-            <a class="subsv_individual_link quattrocento_bold" href="/">Lawn Mowing</a>
-            <a class="subsv_individual_link quattrocento_bold" href="/">Hardscaping</a>
+        <div class="img_aft">
+            <img src="assets/projects_img/kumeu_topdown3.jpg" alt="After work">
         </div>
+    </div>
+
+    <div class="subsv_desc_cont">
+        <a href="softscaping.html" class="oswald">Softscaping</a>
+        <p class="quattrocento_regular">Planting, lawns, garden beds, and seasonal greenery that adds texture, colour, and life. We design softscapes that thrive in your environment and evolve beautifully over time.</p>
+    </div>
+    <div class="subsv_desc_cont">
+        <a href="hardscaping.html" class="oswald">Hardscaping</a>
+        <p class="quattrocento_regular">We build the bones of your outdoor space — decks, fences, patios, retaining walls, and more. Our hardscaping is as functional as it is stylish.</p>
+    </div>
+    <div class="subsv_desc_cont">
+        <a href="maintenance.html" class="oswald">Lawn & Garden Maintenance</a>
+        <p class="quattrocento_regular">Because a beautiful landscape needs more than just installation — it needs care. Our team offers ongoing garden maintenance, hedge trimming, weeding, and lawn care services tailored to your space.</p>
+    </div>
+    <div class="subsv_desc_cont">
+        <h2 class="oswald">Landscape Design</h2>
+        <p class="quattrocento_regular">Start with the big picture. We offer professional design services that bring your vision to life with clear plans, plant palettes, and material selections. And if you hire us to do the work, the design is on us.</p>
     </div>
 
     <div class="value_section">
         <div class="individual_value">
-            <h1 class="value_title quattrocento_bold">1. Expert Landscape Designers:</h1>
-            <h1 class="quattrocento_bold">Fully customized solutions tailored to your space.</h1>
+            <h1 class="quattrocento_bold"><span class="value_title">1. Local Knowledge:</span> We know what grows well in Auckland, and what doesn't.</h1>
         </div>
         <div class="individual_value">
-            <h1 class="value_title quattrocento_bold">2. High-Quality Materials & Workmanship:</h1>
-            <h1 class="quattrocento_bold">Durable, weather-resistant finishes.</h1>
+            <h1 class="quattrocento_bold"><span class="value_title">2. End-to-End Project Management:</span> From planning to planting, we do it all.</h1>
         </div>
         <div class="individual_value">
-            <h1 class="value_title quattrocento_bold">3. Seamless Process:</h1>
-            <h1 class="quattrocento_bold">From consultation to completion, we handle everything.</h1>
+            <h1 class="quattrocento_bold"><span class="value_title">3. Tailored Solutions:</span> We design landscapes that match your lifestyle, property, and goals.</h1>
         </div>
+        <div class="individual_value">
+            <h1 class="quattrocento_bold"><span class="value_title">4. Ongoing Support:</span> Not just one-off installs. We offer maintenance to keep things perfect.</h1>
+        </div>
+    </div>
+
+    <!-- cta section -->
+    <div class="cta_cont">
+        <h1 class="cta_title oswald">LET'S BUILD SOMETHING GREAT</h1>
+        <p class="quattrocento_bold">Whether you're upgrading your backyard, prepping a property for sale, or landscaping a new build, we'll help you do it right the first time.</p>
+        <a class="cta_link oswald" href="contact.html"><span class="cta_span">TALK TO US</span></a>
     </div>
 
     <!-- footer -->
@@ -86,7 +113,8 @@
                     <a class="quattrocento_regular" href="contact.html">Contact</a>
                 </div>
                 <div class="social_links">
-                    <a class="quattrocento_regular" href="/">Facebook</a>
+                    <a class="quattrocento_regular" href="https://www.facebook.com/elysionnz/">Facebook</a>
+                    <a class="quattrocento_regular" href="https://www.instagram.com/elysion.nz/">Instagram</a>
                 </div>
             </div>
         </div>

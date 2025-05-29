@@ -72,14 +72,22 @@
     <!-- navbar -->
     <div class="navbar_cont">
         <div class="navbar_logo">
-            <img src="assets/logo svg/elysion master.svg" alt="Elysion Master Logo">
-            <a class="oswald" href="index.html">ELYSION</a>
+            <a href="index.html" class="navbar_logo_svg"><img src="assets/logo svg/elysion master.svg" alt="Elysion Master Logo"></a>
+            <a class="navbar_logo_text oswald" href="index.html">ELYSION</a>
         </div>
         <div class="navbar_links">
-            <a class="quattrocento_bold" href="service.html">Service</a>
-            <a class="quattrocento_bold" href="blog.html">Blog</a>
+            <a class="quattrocento_bold" href="service.html">Services</a>
+            <a class="quattrocento_bold" href="blog.html">Blogs</a>
             <a class="quattrocento_bold" href="about.html">About</a>
             <a class="quattrocento_bold" href="contact.html">Contact</a>
+        </div>
+        <div class="navbar_dropdown">
+            <svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" fill="none"/>
+                <g>
+                <path class="dropdown_svg" fill="#333333" d="M20 9l-8 8-8-8 1.414-1.414L12 14.172l6.586-6.586"/>
+                </g>
+            </svg>
         </div>
     </div>
 
@@ -98,16 +106,16 @@
     <!-- services we offer homepage -->
     <div class="homepg_service_cont">
         <a href="/" class="homepg_sublogo">
-            <img src="assets/full_logo png/elysion full landscaping.png" alt="Elysion Full Landscaping Logo">
+            <img src="assets/full_logo png/elysion-full-landscaping.png" alt="Elysion Full Landscaping Logo">
         </a>
         <a href="/" class="homepg_sublogo">
-            <img src="assets/full_logo png/elysion full pressure washing.png" alt="Elysion Full Pressure Washing Logo">
+            <img src="assets/full_logo png/elysion-full-pressure-washing.png" alt="Elysion Full Pressure Washing Logo">
         </a>
         <a href="/" class="homepg_sublogo">
-            <img src="assets/full_logo png/elysion full painting.png" alt="Elysion Full Painting & Restoration Logo">
+            <img src="assets/full_logo png/elysion-full-painting.png" alt="Elysion Full Painting & Restoration Logo">
         </a>
         <a href="/" class="homepg_sublogo">
-            <img src="assets/full_logo png/elysion full market ready.png" alt="Elysion Full Market-Ready Package Logo">
+            <img src="assets/full_logo png/elysion-full-market-ready.png" alt="Elysion Full Market-Ready Package Logo">
         </a>
     </div>
 
@@ -140,7 +148,7 @@
     </div>
 
     <!-- garden maintenance subscription -->
-    <div class="garden_subscription_cont">
+    <div class="garden_subscription_cont" id="maintenance_subscription">
         <div class="subscription_title">
             <h1 class="oswald">Garden Subscription</h1>
             <p class="quattrocento_regular">Get 20% off your first 3 months!</p>
@@ -148,31 +156,38 @@
         <div class="subscription_card_cont">
             <div class="subscription_card">
                 <h1 class="subs_pack_name oswald">Bronze</h1>
-                <h1 class="subs_price oswald">$99</h1>
-                <p class="subs_description quattrocento_bold">A simple and cost effective maintenance program.</p>
+                <h1 class="subs_price oswald">$ POA</h1>
+                <p class="subs_description quattrocento_bold">Perfect for low-maintenance properties or tidy homeowners who just need the basics covered.</p>
                 <div class="subscription_service_include">
                     <p class="quattrocento_regular">Fortnightly lawn mowing & edging.</p>
-                    <p class="quattrocento_regular">Weeding & spraying twice per year.</p>
+                    <p class="quattrocento_regular">General weed control.</p>
+                    <p class="quattrocento_regular">Light pruning and garden bed tidy-ups.</p>
+                    <p class="quattrocento_regular">Up to 50kg green waste removal per month.</p>
                 </div>
             </div>
             <div class="subscription_card">
                 <h1 class="subs_pack_name oswald">Silver</h1>
-                <h1 class="subs_price oswald">$199</h1>
-                <p class="subs_description quattrocento_bold">For those who require a full suite of services.</p>
+                <h1 class="subs_price oswald">$ POA</h1>
+                <p class="subs_description quattrocento_bold">Our most popular package - ideal for keeping your landscape consistently sharp.</p>
                 <div class="subscription_service_include">
-                    <p class="quattrocento_regular">Everything from the bronze pack.</p>
-                    <p class="quattrocento_regular">Weeding & spraying 4 times per year.</p>
-                    <p class="quattrocento_regular">Hedge trimming and pruning.</p>
+                    <p class="quattrocento_regular">Everything in Bronze.</p>
+                    <p class="quattrocento_regular">Hedge trimming and shaping.</p>
+                    <p class="quattrocento_regular">Shrub and flax pruning.</p>
+                    <p class="quattrocento_regular">Seasonal fertilising.</p>
+                    <p class="quattrocento_regular">Up to 100kg green waste removal per month.</p>
                 </div>
             </div>
             <div class="subscription_card">
                 <h1 class="subs_pack_name oswald">Gold</h1>
-                <h1 class="subs_price oswald">$499</h1>
-                <p class="subs_description quattrocento_bold">For those who wish to be the envy of their neighbours.</p>
+                <h1 class="subs_price oswald">$ POA</h1>
+                <p class="subs_description quattrocento_bold">For clients who want it all taken care of - especially useful for commercial sites, high-end homes, or busy landlords.</p>
                 <div class="subscription_service_include">
-                    <p class="quattrocento_regular">Everything from the silver pack.</p>
-                    <p class="quattrocento_regular">Weeding & spraying 6 times per year.</p>
-                    <p class="quattrocento_regular">Mulch top ups & more.</p>
+                    <p class="quattrocento_regular">Everything in Silver.</p>
+                    <p class="quattrocento_regular">Lomandra & native grass shaping.</p>
+                    <p class="quattrocento_regular">Regular tree pruning (under 4m).</p>
+                    <p class="quattrocento_regular">Monthly reporting & recommendations.</p>
+                    <p class="quattrocento_regular">Priority scheduling for add-ons and extras.</p>
+                    <p class="quattrocento_regular">Yearly mulch top up.</p>
                 </div>
             </div>
         </div>
@@ -194,7 +209,7 @@
             </div>
             <div class="app_intro_text">
                 <h1 class="oswald">The Elysion Platform is a revolutionary approach to Property Management</h1>
-                <p class="quattrocento_regular">It is accessible directly through the ELYSION app, ...</p>
+                <p class="quattrocento_regular">The Elysion App is currently in development — a smart, simple way for property managers and homeowners to book, track, and manage outdoor services in real-time. From lawn mowing and pressure washing to full landscaping projects, you'll be able to coordinate everything from your phone.</p>
             </div>
         </div>
     </div>
@@ -214,7 +229,8 @@
                     <a class="quattrocento_regular" href="contact.html">Contact</a>
                 </div>
                 <div class="social_links">
-                    <a class="quattrocento_regular" href="/">Facebook</a>
+                    <a class="quattrocento_regular" href="https://www.facebook.com/elysionnz/">Facebook</a>
+                    <a class="quattrocento_regular" href="https://www.instagram.com/elysion.nz/">Instagram</a>
                 </div>
             </div>
         </div>

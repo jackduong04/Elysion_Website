@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.1/dist/lenis.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="--page-color-theme: #cd9734">
+<body class="body" style="--page-color-theme: #cd9734">
     <!-- preloader -->
     <div class="preloader_cont">
         <img class="preloader_logo" src="assets/logo svg/elysion master.svg" alt="Elysion Master Logo">
@@ -24,8 +24,8 @@
     <!-- navbar -->
     <div class="navbar_cont">
         <div class="navbar_logo">
-            <img src="assets/logo svg/elysion master.svg" alt="Elysion Master Logo">
-            <a class="oswald" href="index.html">ELYSION</a>
+            <a href="index.html" class="navbar_logo_svg"><img src="assets/logo svg/elysion master.svg" alt="Elysion Master Logo"></a>
+            <a class="navbar_logo_text oswald" href="index.html">ELYSION</a>
         </div>
         <div class="navbar_links">
             <a class="quattrocento_bold" href="service.html">Services</a>
@@ -33,42 +33,65 @@
             <a class="quattrocento_bold" href="about.html">About</a>
             <a class="quattrocento_bold" href="contact.html">Contact</a>
         </div>
+        <div class="navbar_dropdown">
+            <svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" fill="none"/>
+                <g>
+                <path class="dropdown_svg" fill="#333333" d="M20 9l-8 8-8-8 1.414-1.414L12 14.172l6.586-6.586"/>
+                </g>
+            </svg>
+        </div>
     </div>
 
     <div class="individual_servicepg_hero">
         <h1 class="oswald">Market-Ready Package</h1>
-        <p class="quattrocento_regular">Ready to put your property on the market? Maximize your property's value before selling with our Market-Ready Packages. We provide a combination of landscaping, exterior cleaning, painting, and minor repairs to enhance curb appeal and create a great first impression for potential buyers. Working with our property experts, we will tailor a package that works within your budget and maximise your returns.</p>
+        <p class="quattrocento_bold">One Call. One Crew. One Stunning Property Presentation.</p>
+        <p class="quattrocento_regular">When it comes to selling or renting your home, presentation is everything. Buyers don't just notice the house — they notice the lawns, the paint, the gardens, the driveway, and everything in between. Elysion's Market-Ready Package are designed to make your property stand out, inside and out.</p>
+        <p class="quattrocento_regular">We combine pressure washing, garden cleanup, lawn care, and exterior painting or touch-ups to get your home looking its absolute best - fast.</p>
     </div>
 
-    <div class="subservice_link_section">
-        <div class="bfaft_cont">
-            <div class="img_bf">
-                <img src="assets/projects_img/kumeu_job1_4.jpg" alt="Before Image">
-            </div>
-            <div class="img_aft">
-                <img src="assets/projects_img/kumeu_job1_3.jpg" alt="After Image">
-            </div>
+    <div class="bfaft_cont">
+        <div class="img_bf">
+            <img src="assets/projects_img/kumeu_topdown4.jpg" alt="Before work">
         </div>
-        <div class="subsv_links">
-            <a class="subsv_individual_link quattrocento_bold" href="/">Landscaping & Lawn Care</a>
-            <a class="subsv_individual_link quattrocento_bold" href="/">House Washing & Driveway Cleaning</a>
-            <a class="subsv_individual_link quattrocento_bold" href="/">Touch-Up Painting & Repairs</a>
+        <div class="img_aft">
+            <img src="assets/projects_img/kumeu_topdown3.jpg" alt="After work">
         </div>
+    </div>
+
+    <div class="subsv_desc_cont">
+        <a href="elysion_pressure_washing.html" class="oswald">Exterior Cleaning</a>
+    </div>
+    <div class="subsv_desc_cont">
+        <a href="elysion_landscaping.html" class="oswald">Garden & Lawn Services</a>
+    </div>
+    <div class="subsv_desc_cont">
+        <a href="elysion_painting_restoration.html" class="oswald">Painting & Touch-Ups</a>
+    </div>
+    <div class="subsv_desc_cont">
+        <h2 class="oswald">Add-On Services Available</h2>
     </div>
 
     <div class="value_section">
         <div class="individual_value">
-            <h1 class="value_title quattrocento_bold">1. Sell Faster:</h1>
-            <h1 class="quattrocento_bold">A well-maintained home attracts more buyers.</h1>
+            <h1 class="quattrocento_bold"><span class="value_title">1. We Know What Sells:</span> We've worked with real estate agents, home stagers, and property owners across Auckland.</h1>
         </div>
         <div class="individual_value">
-            <h1 class="value_title quattrocento_bold">2. Increase Property Value:</h1>
-            <h1 class="quattrocento_bold">A fresh look can boost your sale price.</h1>
+            <h1 class="quattrocento_bold"><span class="value_title">2. One Team, End-to-End:</span> No juggling trades or chasing quotes.</h1>
         </div>
         <div class="individual_value">
-            <h1 class="value_title quattrocento_bold">3. Hassle-Free Process:</h1>
-            <h1 class="quattrocento_bold">One provider for all your pre-sale property improvements.</h1>
+            <h1 class="quattrocento_bold"><span class="value_title">3. Fast Turnarounds:</span> We know you're on the clock - and we deliver on time.</h1>
         </div>
+        <div class="individual_value">
+            <h1 class="quattrocento_bold"><span class="value_title">4. Tailored to Budget & Timeline:</span> Get maximum visual impact for minimal hassle.</h1>
+        </div>
+    </div>
+
+    <!-- cta section -->
+    <div class="cta_cont">
+        <h1 class="cta_title oswald">BOOK YOUR ELYSION MARKET-READY PACKAGE</h1>
+        <p class="quattrocento_bold">Fast quotes. Sharp presentation. A higher-value sale made simple.</p>
+        <a class="cta_link oswald" href="contact.html"><span class="cta_span">TALK TO US</span></a>
     </div>
 
     <!-- footer -->
@@ -86,7 +109,8 @@
                     <a class="quattrocento_regular" href="contact.html">Contact</a>
                 </div>
                 <div class="social_links">
-                    <a class="quattrocento_regular" href="/">Facebook</a>
+                    <a class="quattrocento_regular" href="https://www.facebook.com/elysionnz/">Facebook</a>
+                    <a class="quattrocento_regular" href="https://www.instagram.com/elysion.nz/">Instagram</a>
                 </div>
             </div>
         </div>

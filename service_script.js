@@ -8,6 +8,19 @@ gsap.to(".preloader_cont", {
     ease: "expo.in"
 });
 
+// Small display navbar links dropdown
+const dropdownBtn = document.querySelector(".navbar_dropdown");
+const navbarLinks = document.querySelector(".navbar_links");
+
+dropdownBtn.addEventListener("click", (e) => {
+    const dropdownStatus = dropdownBtn.classList.toggle("active");
+    if (dropdownStatus == true) {
+        navbarLinks.classList.add("active");
+    } else {
+        navbarLinks.classList.remove("active");
+    }
+});
+
 // Auto scroll after inactivity
 
 function autoScroll() {
@@ -121,7 +134,6 @@ gsap.from(".navbar_cont", {
 });
 
 var sections = gsap.utils.toArray(".section_item");
-
 sections.forEach((sections) => {
     gsap.from(sections, {
         scrollTrigger: {

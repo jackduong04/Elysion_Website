@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.1/dist/lenis.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="--page-color-theme: #d34133">
+<body class="body" style="--page-color-theme: #d34133">
     <!-- preloader -->
     <div class="preloader_cont">
         <img class="preloader_logo" src="assets/logo svg/elysion master.svg" alt="Elysion Master Logo">
@@ -24,8 +24,8 @@
     <!-- navbar -->
     <div class="navbar_cont">
         <div class="navbar_logo">
-            <img src="assets/logo svg/elysion master.svg" alt="Elysion Master Logo">
-            <a class="oswald" href="index.html">ELYSION</a>
+            <a href="index.html" class="navbar_logo_svg"><img src="assets/logo svg/elysion master.svg" alt="Elysion Master Logo"></a>
+            <a class="navbar_logo_text oswald" href="index.html">ELYSION</a>
         </div>
         <div class="navbar_links">
             <a class="quattrocento_bold" href="service.html">Services</a>
@@ -33,42 +33,65 @@
             <a class="quattrocento_bold" href="about.html">About</a>
             <a class="quattrocento_bold" href="contact.html">Contact</a>
         </div>
+        <div class="navbar_dropdown">
+            <svg  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" fill="none"/>
+                <g>
+                <path class="dropdown_svg" fill="#333333" d="M20 9l-8 8-8-8 1.414-1.414L12 14.172l6.586-6.586"/>
+                </g>
+            </svg>
+        </div>
     </div>
 
     <div class="individual_servicepg_hero">
         <h1 class="oswald">Painting & Restoration</h1>
-        <p class="quattrocento_regular">Give your property a fresh new look with our professional painting and restoration services. We provide expert interior and exterior painting, surface refinishing and restoration to breathe new life into your home or business.</p>
+        <p class="quattrocento_bold">Expert Exterior Finishes for Homes, Rentals & Commercial Properties</p>
+        <p class="quattrocento_regular">Sometimes, all a property needs is a fresh coat of paint or a little restoration work to feel brand new again. At Elysion, we combine professional painting services with surface repairs and timber restoration to completely revitalise your outdoor spaces — whether it’s a tidy-up before selling or part of a full landscape upgrade.</p>
+        <p class="quattrocento_regular">We work across residential and commercial properties throughout Auckland, delivering high-quality finishes, lasting results, and a fast, tidy process from start to finish.</p>
     </div>
 
-    <div class="subservice_link_section">
-        <div class="bfaft_cont">
-            <div class="img_bf">
-                <img src="assets/projects_img/massey_job1_3.jpg" alt="Before Image">
-            </div>
-            <div class="img_aft">
-                <img src="assets/projects_img/massey_job1_4.jpg" alt="After Image">
-            </div>
+    <div class="bfaft_cont">
+        <div class="img_bf">
+            <img src="assets/projects_img/kumeu_topdown4.jpg" alt="Before work">
         </div>
-        <div class="subsv_links">
-            <a class="subsv_individual_link quattrocento_bold" href="/">Exterior & Interior Painting</a>
-            <a class="subsv_individual_link quattrocento_bold" href="/">Deck & Fence Staining</a>
-            <a class="subsv_individual_link quattrocento_bold" href="/">Surface Restoration</a>
+        <div class="img_aft">
+            <img src="assets/projects_img/kumeu_topdown3.jpg" alt="After work">
         </div>
+    </div>
+
+    <div class="subsv_desc_cont">
+        <a href="ex_interior_painting.html" class="oswald">Exterior Painting</a>
+    </div>
+    <div class="subsv_desc_cont">
+        <a href="deck_fence_staining.html" class="oswald">Deck & Fence Restoration</a>
+    </div>
+    <div class="subsv_desc_cont">
+        <a href="surface_restoration.html" class="oswald">Surface Repairs & Touch-Ups</a>
+    </div>
+    <div class="subsv_desc_cont">
+        <a href="elysion_market_ready.html" class="oswald">Pre-Sale Property Refreshes</a>
     </div>
 
     <div class="value_section">
         <div class="individual_value">
-            <h1 class="value_title quattrocento_bold">1. Professional-Grade Paint & Materials:</h1>
-            <h1 class="quattrocento_bold">Long-lasting, high-quality finishes.</h1>
+            <h1 class="quattrocento_bold"><span class="value_title">1. Trained Professionals:</span> Skilled in both painting and prep work.</h1>
         </div>
         <div class="individual_value">
-            <h1 class="value_title quattrocento_bold">2. Skilled & Experienced Painters:</h1>
-            <h1 class="quattrocento_bold">Attention to detail for flawless results.</h1>
+            <h1 class="quattrocento_bold"><span class="value_title">2. Property-Wide Approach:</span> We fix surfaces before we paint them.</h1>
         </div>
         <div class="individual_value">
-            <h1 class="value_title quattrocento_bold">3. Affordable & Efficient Service:</h1>
-            <h1 class="quattrocento_bold">We work quickly without compromising quality.</h1>
+            <h1 class="quattrocento_bold"><span class="value_title">3. Clean, Tidy, and Respectful:</span> No mess, no shortcuts.</h1>
         </div>
+        <div class="individual_value">
+            <h1 class="quattrocento_bold"><span class="value_title">4. Flexible Scope:</span> One fence, one house, or the whole block.</h1>
+        </div>
+    </div>
+
+    <!-- cta section -->
+    <div class="cta_cont">
+        <h1 class="cta_title oswald">MAKE A STRONG FIRST IMPRESSION</h1>
+        <p class="quattrocento_bold">Whether it's peeling paint, tired timber, or a faded facade, we'll bring it back to life — with quality that lasts.</p>
+        <a class="cta_link oswald" href="contact.html"><span class="cta_span">TALK TO US</span></a>
     </div>
 
     <!-- footer -->
@@ -86,7 +109,8 @@
                     <a class="quattrocento_regular" href="contact.html">Contact</a>
                 </div>
                 <div class="social_links">
-                    <a class="quattrocento_regular" href="/">Facebook</a>
+                    <a class="quattrocento_regular" href="https://www.facebook.com/elysionnz/">Facebook</a>
+                    <a class="quattrocento_regular" href="https://www.instagram.com/elysion.nz/">Instagram</a>
                 </div>
             </div>
         </div>

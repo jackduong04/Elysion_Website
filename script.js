@@ -8,12 +8,25 @@ gsap.to(".preloader_cont", {
     ease: "expo.in"
 });
 
+// Small display navbar links dropdown
+const dropdownBtn = document.querySelector(".navbar_dropdown");
+const navbarLinks = document.querySelector(".navbar_links");
+
+dropdownBtn.addEventListener("click", (e) => {
+    const dropdownStatus = dropdownBtn.classList.toggle("active");
+    if (dropdownStatus == true) {
+        navbarLinks.classList.add("active");
+    } else {
+        navbarLinks.classList.remove("active");
+    }
+});
+
 // Dark theme change
 const aioServiceAnimate = gsap.timeline({
     scrollTrigger: {
-        trigger: ".aio_banner",
-        start: "center center",
-        end: "bottom top",
+        trigger: ".homepg_service_cont",
+        start: "center bottom",
+        end: "center top",
         toggleActions: "play reverse play reverse"
     }
 });
