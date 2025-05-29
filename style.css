@@ -47,7 +47,7 @@
     z-index: 9;
     background-color: var(--normal-hover-color);
     align-content: center;
-    justify-items: center;
+    text-align: center;
 }
 
 .preloader_cont img {
@@ -431,7 +431,7 @@
     width: 80vw;
     margin: 150px auto;
     padding: 100px 0;
-    justify-items: center;
+    text-align: center;
 }
 
 .cta_title {
@@ -460,7 +460,7 @@
     padding: 20px 120px;
     background-color: var(--cultured-white-color);
     border-radius: 30px;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 .cta_span:hover {
     padding: 20px 60px;
@@ -582,8 +582,8 @@
     height: 500px;
     border-radius: 30px;
     border: 9px solid var(--maintext-color);
-    justify-items: center;
     align-content: center;
+    text-align: center;
     background-color: #e5e5e5;
 }
 
@@ -1149,7 +1149,7 @@
     width: 20vw;
     border: 2px solid var(--maintext-color);
     border-radius: 20px;
-    justify-items: center;
+    text-align: center;
     padding: 5px;
     margin: 100px auto;
 }

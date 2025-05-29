@@ -21,21 +21,13 @@ dropdownBtn.addEventListener("click", (e) => {
     }
 });
 
-// Before after comparision on hover
-// const bfaft_cont = document.querySelector(".bfaft_cont");
-// const img_bf = document.querySelector(".img_bf");
-// bfaft_cont.addEventListener("mousemove", (e) => {
-//     img_bf.style.width = `${e.layerX}px`;
-// });
-
-// Before after comparison on scroll
 let matchMedia = gsap.matchMedia();
 
 matchMedia.add({
     normalViewPort: "(min-width: 1251px)",
-    is1250: "(max-width: 1250px)",
-    is1000: "(max-width: 1000px)",
-    is750: "(max-width: 750px)",
+    is1250: "(min-width: 1001px) and (max-width: 1250px)",
+    is1000: "(min-width: 751px) and (max-width: 1000px)",
+    is750: "(min-width: 501px) and (max-width: 750px)",
     is500: "(max-width: 500px)"
 }, (i) => {
     let {normalViewPort, is1250, is1000, is750, is500} = i.conditions;

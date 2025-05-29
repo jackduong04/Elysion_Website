@@ -64,10 +64,6 @@ haveAProject
     .to(".cta_title", {
         color: "#f5f5f5",
         duration: 0.15
-    })
-    .from(".cta_link", {
-        opacity: 0,
-        duration: 0.15
     });
 
 // Fade in scroll animation
