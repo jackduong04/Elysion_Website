@@ -178,7 +178,7 @@
     left: calc(50% - 100px);
     transform-style: preserve-3d;
     transform: perspective(1200px);
-    animation: autoRun 90s linear infinite;
+    animation: autoRun 180s linear infinite;
 }
 
 @keyframes autoRun {
@@ -1035,7 +1035,7 @@
     line-height: 1.5;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     text-align: center;
     color: var(--maintext-color);
     padding: 0 60px;
@@ -1043,7 +1043,7 @@
 
 .scroll_box_active h2 {
     font-size: 4rem;
-    margin-top: 20px;
+    margin: 30px;
 }
 
 .scroll_box_active p {
@@ -1052,8 +1052,8 @@
 
 .scroll_box_staticbg {
     background-color: #000;
-    width: 100%;
-    height: 100%;
+    width: 101%;
+    height: 101%;
 }
 
 /* contact page */

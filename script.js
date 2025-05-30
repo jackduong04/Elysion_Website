@@ -28,7 +28,7 @@ gsap.from(".navbar_cont", {
         start: "top bottom",
         toggleActions: "play none none reset"
     },
-    x: -150,
+    y: 150,
     opacity: 0,
     duration: 0.5
 });
@@ -39,19 +39,19 @@ gsap.from(".aio_banner", {
         start: "top bottom",
         toggleActions: "play none none reset"
     },
-    x: -150,
+    y: 150,
     opacity: 0,
     duration: 0.5
 });
 
-gsap.from(".featured_img_cont", {
+gsap.from(".featured_blog", {
     scrollTrigger: {
-        trigger: ".aio_banner",
-        start: "bottom top",
+        trigger: ".featured_blog",
+        start: "top bottom",
         toggleActions: "play none none reverse"
     },
     y: 100,
-    scale: 0.7,
+    scale: 0.8,
     opacity: 0,
     duration: 0.5
 });
@@ -62,7 +62,7 @@ gsap.from(".second_featured_blog", {
         start: "top bottom",
         toggleActions: "play none none reset"
     },
-    x: -150,
+    y: 150,
     opacity: 0,
     duration: 0.5
 });
@@ -73,7 +73,7 @@ gsap.from(".cta_title", {
         start: "top bottom",
         toggleActions: "play none none reset"
     },
-    x: -150,
+    y: 150,
     opacity: 0,
     duration: 0.5
 });
@@ -84,7 +84,7 @@ gsap.from(".subscription_title", {
         start: "top bottom",
         toggleActions: "play none none reset"
     },
-    x: -150,
+    y: 150,
     opacity: 0,
     duration: 0.5
 });
@@ -106,7 +106,7 @@ gsap.from(".platform_heading", {
         start: "top bottom",
         toggleActions: "play none none reset"
     },
-    x: -150,
+    y: 150,
     opacity: 0,
     duration: 0.5
 });
@@ -117,20 +117,7 @@ gsap.from(".app_intro", {
         start: "top bottom",
         toggleActions: "play none none reset"
     },
-    x: -150,
+    y: 150,
     opacity: 0,
     duration: 0.5
 });
-
-// Lenis
-const lenis = new Lenis();
-// Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
-lenis.on('scroll', ScrollTrigger.update);
-// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
-// This ensures Lenis's smooth scroll animation updates on each GSAP tick
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000); // Convert time from seconds to milliseconds
-});
-// Disable lag smoothing in GSAP to prevent any delay in scroll animations
-gsap.ticker.lagSmoothing(0);
-
