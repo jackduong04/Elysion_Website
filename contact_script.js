@@ -86,30 +86,27 @@ autoScroll();
 gsap.from(".contact_form_cont", {
     scrollTrigger: {
         trigger: ".contact_form_cont",
-        start: "top center",
-        toggleActions: "play none none reverse"
+        start: "top center"
     },
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });
 
 gsap.from(".navbar_cont", {
     scrollTrigger: {
         trigger: ".contact_form_cont",
-        start: "top center",
-        toggleActions: "play none none none"
+        start: "top center"
     },
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });
 
 gsap.from(".contact_info_cont", {
     scrollTrigger: {
         trigger: ".contact_info_cont",
-        start: "top bottom",
-        toggleActions: "play none none reset"
+        start: "top bottom"
     },
-    y: 150,
+    y: 50,
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });

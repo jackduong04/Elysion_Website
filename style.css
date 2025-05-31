@@ -436,7 +436,7 @@
 }
 
 .cta_title {
-    font-size: 6rem;
+    font-size: 5rem;
     font-weight: 500;
     color: var(--maintext-color);
     margin-bottom: 200px;
@@ -452,7 +452,7 @@
 }
 
 .cta_link {
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-decoration: none;
     color: var(--property-services-color);
 }
@@ -476,7 +476,7 @@
 }
 
 .subscription_title h1 {
-    font-size: 7rem;
+    font-size: 6rem;
     font-weight: 600;
     color: var(--maintext-color);
     text-align: center;
@@ -484,7 +484,7 @@
 
 .subscription_title p {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--maintext-color);
     text-align: center;
 }
@@ -1019,7 +1019,7 @@
 
 .scroll_box_cont {
     width: 50vw;
-    height: 80vh;
+    height: 65vh;
     margin: auto;
     position: relative;
 }
@@ -1224,15 +1224,15 @@
     }
 
     .cta_title {
-        font-size: 5.5rem;
+        font-size: 4.5rem;
     }
 
     .cta_link, .subscription_title p {
-        font-size: 2.8rem;
+        font-size: 2.3rem;
     }
 
     .subscription_title h1 {
-        font-size: 7rem;
+        font-size: 5.5rem;
     }
 
     .subscription_card_cont {
@@ -1480,11 +1480,11 @@
     }
 
     .cta_link, .subscription_title p {
-        font-size: 2.3rem;
+        font-size: 2.1rem;
     }
 
     .subscription_title h1 {
-        font-size: 5.5rem;
+        font-size: 5rem;
     }
 
     .subscription_card_cont {

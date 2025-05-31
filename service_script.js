@@ -116,21 +116,19 @@ const bgColorAnimate = gsap.timeline({
 gsap.from(".section_cont", {
     scrollTrigger: {
         trigger: ".section_cont",
-        start: "top center",
-        toggleActions: "play none none reverse"
+        start: "top center"
     },
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });
 
 gsap.from(".navbar_cont", {
     scrollTrigger: {
         trigger: ".section_cont",
-        start: "top center",
-        toggleActions: "play none none none"
+        start: "top center"
     },
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });
 
 var sections = gsap.utils.toArray(".section_item");
@@ -138,11 +136,10 @@ sections.forEach((sections) => {
     gsap.from(sections, {
         scrollTrigger: {
             trigger: sections,
-            start: "top bottom",
-            toggleActions: "play none none reset"
+            start: "top bottom"
         },
-        y: 150,
+        y: 50,
         opacity: 0,
-        duration: 0.5
+        duration: 0.3
     })
 });

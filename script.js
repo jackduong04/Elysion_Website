@@ -25,99 +25,90 @@ dropdownBtn.addEventListener("click", (e) => {
 gsap.from(".navbar_cont", {
     scrollTrigger: {
         trigger: ".navbar_cont",
-        start: "top bottom",
-        toggleActions: "play none none reset"
+        start: "top bottom"
     },
-    y: 150,
+    y: 50,
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });
 
 gsap.from(".aio_banner", {
     scrollTrigger: {
         trigger: ".aio_banner",
-        start: "top bottom",
-        toggleActions: "play none none reset"
+        start: "top bottom"
     },
-    y: 150,
+    y: 50,
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });
 
 gsap.from(".featured_blog", {
     scrollTrigger: {
         trigger: ".featured_blog",
-        start: "top bottom",
-        toggleActions: "play none none reverse"
+        start: "top bottom"
     },
-    y: 100,
+    y: 50,
     scale: 0.8,
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });
 
 gsap.from(".second_featured_blog", {
     scrollTrigger: {
         trigger: ".second_featured_blog",
-        start: "top bottom",
-        toggleActions: "play none none reset"
+        start: "top bottom"
     },
-    y: 150,
+    y: 50,
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });
 
 gsap.from(".cta_title", {
     scrollTrigger: {
         trigger: ".cta_title",
-        start: "top bottom",
-        toggleActions: "play none none reset"
+        start: "top bottom"
     },
-    y: 150,
+    y: 50,
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });
 
 gsap.from(".subscription_title", {
     scrollTrigger: {
         trigger: ".subscription_title",
-        start: "top bottom",
-        toggleActions: "play none none reset"
+        start: "top bottom"
     },
-    y: 150,
+    y: 50,
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });
 
 gsap.from(".subscription_card_cont", {
     scrollTrigger: {
         trigger: ".subscription_card_cont",
-        start: "top bottom",
-        toggleActions: "play none none reset"
+        start: "top bottom"
     },
-    y: 150,
+    y: 50,
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });
 
 gsap.from(".platform_heading", {
     scrollTrigger: {
         trigger: ".platform_heading",
-        start: "top bottom",
-        toggleActions: "play none none reset"
+        start: "top bottom"
     },
-    y: 150,
+    y: 50,
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });
 
 gsap.from(".app_intro", {
     scrollTrigger: {
         trigger: ".app_intro",
-        start: "top bottom",
-        toggleActions: "play none none reset"
+        start: "top bottom"
     },
-    y: 150,
+    y: 50,
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });

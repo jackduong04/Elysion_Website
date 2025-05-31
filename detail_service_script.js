@@ -62,22 +62,20 @@ subsvDescConts.forEach((subsvDescConts) => {
     gsap.from(subsvDescConts, {
     scrollTrigger: {
         trigger: subsvDescConts,
-        start: "top bottom",
-        toggleActions: "play none none reverse"
+        start: "top bottom"
     },
-    y: 150,
+    y: 50,
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
     });
 });
 
 gsap.from(".individual_value", {
     scrollTrigger: {
         trigger: ".individual_value",
-        start: "bottom bottom",
-        toggleActions: "play none none reverse"
+        start: "bottom bottom"
     },
-    y: 150,
+    y: 50,
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });

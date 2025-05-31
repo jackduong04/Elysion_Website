@@ -86,19 +86,17 @@ autoScroll();
 gsap.from(".blog_list_cont", {
     scrollTrigger: {
         trigger: ".second_featured_blog_img",
-        start: "top center",
-        toggleActions: "play none none reverse"
+        start: "top center"
     },
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });
 
 gsap.from(".navbar_cont", {
     scrollTrigger: {
         trigger: ".second_featured_blog_img",
-        start: "top center",
-        toggleActions: "play none none none"
+        start: "top center"
     },
     opacity: 0,
-    duration: 0.5
+    duration: 0.3
 });
