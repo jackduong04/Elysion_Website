@@ -131,6 +131,9 @@
 .navbar_links a:nth-child(4):hover {
     color: var(--logo-marketready-color);
 }
+.navbar_links a:nth-child(5):hover {
+    color: var(--property-services-color);
+}
 
 .navbar_dropdown {
     display: none;
@@ -473,7 +476,7 @@
 .garden_subscription_cont {
     width: 80vw;
     margin: 300px auto;
-    justify-items: center;
+    text-align: center;
 }
 
 .subscription_title h1 {
@@ -1183,6 +1186,14 @@
 
     .navbar_cont {
         width: 95vw;
+    }
+
+    .navbar_links {
+        gap: 50px;
+    }
+
+    .navbar_links a {
+        font-size: 1.6rem;
     }
 
     .homepg_hero p, .aio_support_text p {
