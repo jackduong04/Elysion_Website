@@ -47,7 +47,7 @@ scrollBoxActive.forEach((scrollBoxActive) => {
             end: "center top",
             scrub: 1
         },
-        height: "100%"
+        height: "150%"
     })
 });
 
@@ -56,16 +56,18 @@ gsap.to(".aboutpg_body", {
     scrollTrigger: {
         trigger: ".footer",
         start: "top bottom",
+        toggleActions: "play none none reverse"
     },
     backgroundColor: "#fff",
-    duration: 0.3
+    duration: 0.2
 });
 
 gsap.to(".aboutpg_fixed_bg", {
     scrollTrigger: {
         trigger: ".footer",
         start: "top bottom",
+        toggleActions: "play none none reverse"
     },
     display: "none",
-    duration: 0.3
+    duration: 0.2
 });

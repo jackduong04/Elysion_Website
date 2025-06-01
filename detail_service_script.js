@@ -36,7 +36,7 @@ matchMedia.add({
     gsap.to(".img_bf", {
         scrollTrigger: {
             trigger: ".bfaft_cont",
-            start: "top center",
+            start: "bottom bottom",
             end: "top top",
             scrub: true
         },

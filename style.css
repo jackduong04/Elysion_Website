@@ -164,7 +164,7 @@
 
 .img3dslider_cont {
     width: 90vw;
-    height: 750px;
+    height: 650px;
     position: relative;
     overflow: hidden;
     margin: auto;
@@ -207,6 +207,7 @@
 .aio_banner {
     width: 90vw;
     margin: 50px auto;
+    margin-top: 0;
     padding: 50px 0;
 }
 
@@ -454,7 +455,7 @@
 .cta_link {
     font-size: 2.5rem;
     text-decoration: none;
-    color: var(--property-services-color);
+    color: var(--maintext-color);
 }
 
 .cta_span {
@@ -492,7 +493,7 @@
 .subscription_card_cont {
     display: flex;
     gap: 150px;
-    margin-top: 150px;
+    margin: 150px 0;
 }
 
 .subscription_card {
@@ -520,16 +521,10 @@
     border-bottom: 4px solid #ffd700;
 }
 
-.subs_price {
-    font-size: 3.5rem;
-    font-weight: 600;
-    text-align: right;
-}
-
 .subs_description {
     font-size: 1.5rem;
     text-align: center;
-    margin: 20px 0;
+    margin: 50px 0;
 }
 
 .subscription_service_include p {
@@ -872,6 +867,13 @@
     margin: 30px;
 }
 
+.blog_section_cont img, .single_blog_header img {
+    width: 60%;
+    height: auto;
+    display: block;
+    margin: 100px auto;
+}
+
 /* detail service page */
 .individual_servicepg_hero {
     width: 75vw;
@@ -1019,7 +1021,7 @@
 
 .scroll_box_cont {
     width: 50vw;
-    height: 65vh;
+    height: 60vh;
     margin: auto;
     position: relative;
 }
@@ -1247,14 +1249,6 @@
         font-size: 2.2rem;
     }
 
-    .subs_price {
-        font-size: 2.8rem;
-    }
-
-    .subs_description {
-        font-size: 1.3rem;
-    }
-
     .subscription_service_include p, .subs_description {
         font-size: 1.2rem;
     }
@@ -1336,6 +1330,18 @@
     }
     .blogpg_blog_title:hover {
         box-shadow: 0px -0.7rem 0px 0px var(--normal-hover-color) inset;
+    }
+
+    .single_blog_wrapper h1 {
+        font-size: 3rem;
+    }
+
+    .single_blog_header p, .blog_section_cont p, .blog_section_cont ul li {
+        font-size: 1.3rem;
+    }
+
+    .blog_section_cont h2 {
+        font-size: 2rem;
     }
 
     .contact_form_cont {
@@ -1495,6 +1501,10 @@
         width: 280px;
     }
 
+    .subscription_service_include p, .subs_description {
+        font-size: 1.1rem;
+    }
+
     .coming_soon_mobile_header {
         font-size: 3rem;
     }
@@ -1569,6 +1579,10 @@
 
     .blog_item {
         width: 40%;
+    }
+
+    .single_blog_wrapper h1 {
+        font-size: 2.7rem;
     }
 
     .individual_servicepg_hero h1 {
@@ -1678,6 +1692,10 @@
         font-size: 2.5rem;
     }
 
+    .img3dslider_cont {
+        height: 500px;
+    }
+
     .item_3dslider {
         transform:
             rotateY(calc((var(--img-position) - 1) * (360 / var(--img-quantity)) * 1deg))
@@ -1717,6 +1735,7 @@
 
     .garden_subscription_cont {
         margin: 200px auto;
+        width: 90vw;
     }
 
     .subscription_title h1 {
@@ -1806,15 +1825,19 @@
     }
 
     .single_blog_wrapper h1 {
-        font-size: 3rem;
+        font-size: 2.4rem;
     }
 
     .single_blog_header p, .blog_section_cont p, .blog_section_cont ul li {
-        font-size: 1.35rem;
+        font-size: 1.2rem;
     }
 
     .blog_section_cont h2 {
         font-size: 1.7rem;
+    }
+
+    .blog_section_cont img, .single_blog_header img {
+        width: 70%;
     }
 
     .individual_servicepg_hero h1 {
@@ -1900,7 +1923,7 @@
     }
     
     .img3dslider_cont {
-        height: 380px;
+        height: 320px;
     }
     
     .img3dslider {
@@ -1961,7 +1984,7 @@
     }
 
     .cta_link {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .cta_span {
@@ -1979,8 +2002,16 @@
         font-size: 1.6rem;
     }
 
-    .subs_price {
-        font-size: 2.6rem;
+    .subs_pack_name {
+        font-size: 1.8rem;
+    }
+
+    .subs_description {
+        margin: 35px 0;
+    }
+
+    .subscription_service_include p, .subs_description {
+        font-size: 1rem;
     }
 
     .coming_soon_mobile_header {
@@ -2073,6 +2104,22 @@
     }
     .blogpg_blog_title:hover {
         box-shadow: 0px -0.55rem 0px 0px var(--normal-hover-color) inset;
+    }
+
+    .single_blog_wrapper h1 {
+        font-size: 1.9rem;
+    }
+
+    .single_blog_header p, .blog_section_cont p, .blog_section_cont ul li {
+        font-size: 1.1rem;
+    }
+
+    .blog_section_cont h2 {
+        font-size: 1.4rem;
+    }
+
+    .blog_section_cont img, .single_blog_header img {
+        width: 80%;
     }
 
     .individual_servicepg_hero h1 {
@@ -2229,11 +2276,11 @@
     }
 
     .cta_link {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .cta_span {
-        padding: 20px 70px;
+        padding: 20px 60px;
     }
     .cta_span:hover {
         padding: 20px 40px;
@@ -2252,15 +2299,15 @@
     }
 
     .subs_pack_name {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
-    .subs_price {
-        font-size: 2.2rem;
+    .subs_description {
+        margin: 25px 0;
     }
 
     .subscription_service_include p, .subs_description {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
 
     .platform_coming_soon {
@@ -2358,16 +2405,8 @@
         font-size: 1.2rem;
     }
 
-    .single_blog_wrapper h1 {
-        font-size: 1.9rem;
-    }
-
-    .single_blog_header p, .blog_section_cont p, .blog_section_cont ul li {
-        font-size: 1.1rem;
-    }
-
-    .blog_section_cont h2 {
-        font-size: 1.4rem;
+    .blog_section_cont img, .single_blog_header img {
+        width: 90%;
     }
 
     .individual_servicepg_hero {
