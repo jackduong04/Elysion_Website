@@ -497,6 +497,7 @@
     display: flex;
     gap: 150px;
     margin: 150px 0;
+    justify-content: center;
 }
 
 .subscription_card {
