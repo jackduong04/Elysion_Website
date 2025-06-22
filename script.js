@@ -21,6 +21,96 @@ dropdownBtn.addEventListener("click", (e) => {
     }
 });
 
+// Testimonial carousel logic
+const testimonialCards = document.getElementsByClassName("testimonial_card");
+const sliderIndicator = document.getElementsByClassName("slider_single_indicator");
+const numOfSlides = 4;
+
+// Auto carousel
+function autoSlider(index) {
+    for(let i = 0; i < numOfSlides; i++) {
+        sliderIndicator[i].classList.remove("indicate_current");
+        testimonialCards[i].classList.remove("testimonial_current");
+    }
+    sliderIndicator[index].classList.add("indicate_current");
+    testimonialCards[index].classList.add("testimonial_current");
+}
+
+let sliderCurrentIndex = 0;
+let intervalId = null; // Hold the setInterval reference
+
+function sliderStartLoop() {
+    if(!intervalId) {
+        autoSlider(sliderCurrentIndex);
+        intervalId = setInterval(() => {
+            sliderCurrentIndex = (sliderCurrentIndex + 1) % numOfSlides;
+            autoSlider(sliderCurrentIndex);
+        }, 4000);
+    }
+}
+
+function sliderStopLoop() {
+    if(intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+    }
+}
+
+// Observe if slider enters viewport
+const testimonialCont = document.querySelector(".testimonial_cont");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            sliderStartLoop();
+        } else {
+            sliderStopLoop();
+        }
+    });
+});
+
+if(testimonialCont) {
+    observer.observe(testimonialCont);
+}
+
+// On-click logic
+sliderIndicator[0].onclick = function() {
+    for(let i = 0; i < numOfSlides; i++) {
+        sliderIndicator[i].classList.remove("indicate_current");
+        testimonialCards[i].classList.remove("testimonial_current");
+    }
+    this.classList.add("indicate_current");
+    testimonialCards[0].classList.add("testimonial_current");
+    sliderStopLoop();
+}
+sliderIndicator[1].onclick = function() {
+    for(let i = 0; i < numOfSlides; i++) {
+        sliderIndicator[i].classList.remove("indicate_current");
+        testimonialCards[i].classList.remove("testimonial_current");
+    }
+    this.classList.add("indicate_current");
+    testimonialCards[1].classList.add("testimonial_current");
+    sliderStopLoop();
+}
+sliderIndicator[2].onclick = function() {
+    for(let i = 0; i < numOfSlides; i++) {
+        sliderIndicator[i].classList.remove("indicate_current");
+        testimonialCards[i].classList.remove("testimonial_current");
+    }
+    this.classList.add("indicate_current");
+    testimonialCards[2].classList.add("testimonial_current");
+    sliderStopLoop();
+}
+sliderIndicator[3].onclick = function() {
+    for(let i = 0; i < numOfSlides; i++) {
+        sliderIndicator[i].classList.remove("indicate_current");
+        testimonialCards[i].classList.remove("testimonial_current");
+    }
+    this.classList.add("indicate_current");
+    testimonialCards[3].classList.add("testimonial_current");
+    sliderStopLoop();
+}
+
 // Fade in scroll animation
 gsap.from(".navbar_cont", {
     scrollTrigger: {
@@ -42,30 +132,9 @@ gsap.from(".aio_banner", {
     duration: 0.3
 });
 
-gsap.from(".featured_blog", {
+gsap.from(".contact_form_cont", {
     scrollTrigger: {
-        trigger: ".featured_blog",
-        start: "top bottom"
-    },
-    y: 50,
-    scale: 0.8,
-    opacity: 0,
-    duration: 0.3
-});
-
-gsap.from(".second_featured_blog", {
-    scrollTrigger: {
-        trigger: ".second_featured_blog",
-        start: "top bottom"
-    },
-    y: 50,
-    opacity: 0,
-    duration: 0.3
-});
-
-gsap.from(".cta_title", {
-    scrollTrigger: {
-        trigger: ".cta_title",
+        trigger: ".contact_form_cont",
         start: "top bottom"
     },
     y: 50,
@@ -82,10 +151,30 @@ gsap.from(".subscription_title", {
     opacity: 0,
     duration: 0.3
 });
-
 gsap.from(".subscription_card_cont", {
     scrollTrigger: {
         trigger: ".subscription_card_cont",
+        start: "top bottom"
+    },
+    y: 50,
+    opacity: 0,
+    duration: 0.3
+});
+
+gsap.from(".featured_blog", {
+    scrollTrigger: {
+        trigger: ".featured_blog",
+        start: "top bottom"
+    },
+    y: 50,
+    scale: 0.8,
+    opacity: 0,
+    duration: 0.3
+});
+
+gsap.from(".testimonial_cont", {
+    scrollTrigger: {
+        trigger: ".testimonial_cont",
         start: "top bottom"
     },
     y: 50,
@@ -102,7 +191,6 @@ gsap.from(".platform_heading", {
     opacity: 0,
     duration: 0.3
 });
-
 gsap.from(".app_intro", {
     scrollTrigger: {
         trigger: ".app_intro",

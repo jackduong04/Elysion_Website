@@ -85,7 +85,7 @@ autoScroll();
 // Fade in scroll animation
 gsap.from(".blog_list_cont", {
     scrollTrigger: {
-        trigger: ".second_featured_blog_img",
+        trigger: ".blog_item_img_cont",
         start: "top center"
     },
     opacity: 0,
@@ -94,7 +94,7 @@ gsap.from(".blog_list_cont", {
 
 gsap.from(".navbar_cont", {
     scrollTrigger: {
-        trigger: ".second_featured_blog_img",
+        trigger: ".blog_item_img_cont",
         start: "top center"
     },
     opacity: 0,

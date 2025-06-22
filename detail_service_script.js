@@ -56,6 +56,12 @@ matchMedia.add({
     });
 });
 
+const bfaftCont = document.querySelector(".bfaft_cont");
+const imgBefore = document.querySelector(".img_bf");
+bfaftCont.addEventListener("mousemove", (e) => {
+    imgBefore.style.width = `${e.layerX}px`;
+});
+
 // Fade in scroll animation
 var subsvDescConts = gsap.utils.toArray(".subsv_desc_cont");
 subsvDescConts.forEach((subsvDescConts) => {

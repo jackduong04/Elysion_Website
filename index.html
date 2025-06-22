@@ -41,7 +41,15 @@
             <a class="navbar_logo_text oswald" href="/">ELYSION</a>
         </div>
         <div class="navbar_links">
-            <a class="quattrocento_bold" href="/service">Services</a>
+            <div class="navbar_service_all_links_cont">
+                <a class="quattrocento_bold" href="/service">Services</a>
+                <div class="navbar_service_sublinks">
+                    <a href="elysion_landscaping.html" class="quattrocento_bold">Landscaping</a>
+                    <a href="elysion_pressure_washing.html" class="quattrocento_bold">Pressure Washing</a>
+                    <a href="elysion_painting_restoration.html" class="quattrocento_bold">Painting & Restoration</a>
+                    <a href="elysion_market_ready.html" class="quattrocento_bold">Market-Ready Package</a>
+                </div>
+            </div>
             <a class="quattrocento_bold" href="/blog">Blogs</a>
             <a class="quattrocento_bold" href="/about">About</a>
             <a class="quattrocento_bold" href="/contact">Contact</a>
@@ -76,16 +84,16 @@
                 <img src="/assets/projects_img/apollo_job1_2.jpg" alt="">
             </div>
             <div class="item_3dslider" style="--img-position: 2">
-                <img src="/assets/projects_img/dairyflat_job1_1.jpg" alt="">
+                <img src="/assets/projects_img/henderson_job1_1.jpg" alt="">
             </div>
             <div class="item_3dslider" style="--img-position: 3">
                 <img src="/assets/projects_img/dairyflat_job1_5.jpg" alt="">
             </div>
             <div class="item_3dslider" style="--img-position: 4">
-                <img src="/assets/projects_img/kumeu_job1_3.jpg" alt="">
+                <img src="assets/projects_img/remuera_one-off.jpg" alt="">
             </div>
             <div class="item_3dslider" style="--img-position: 5">
-                <img src="/assets/projects_img/kumeu_job1_6.jpg" alt="">
+                <img src="/assets/projects_img/kumeu_job1_7.jpg" alt="">
             </div>
             <div class="item_3dslider" style="--img-position: 6">
                 <img src="/assets/projects_img/kumeu_job2_2.jpg" alt="">
@@ -133,10 +141,35 @@
         </a>
     </div>
 
-    <!-- cta section -->
-    <div class="cta_cont">
-        <h1 class="cta_title oswald">HAVE A PROJECT IN MIND?</h1>
-        <a class="cta_link oswald" href="/contact"><span class="cta_span">TALK TO US</span></a>
+    <!-- contact form -->
+    <div class="contact_form_cont">
+        <h1 class="oswald">HAVE A PROJECT IN MIND?</h1>
+        <p class="quattrocento_regular">Whether it's a one-off job or ongoing property care, we're ready to help.</p>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="bc5c9e68-b456-4b56-aadb-63453b520e4c">
+            <div class="input_row">
+                <div class="input_group">
+                    <h2 class="quattrocento_bold">Name</h2>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="input_group">
+                    <h2 class="quattrocento_bold">Email</h2>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="input_group">
+                    <h2 class="quattrocento_bold">Phone</h2>
+                    <input type="tel" name="phone" required>
+                </div>
+                <div class="input_group">
+                    <h2 class="quattrocento_bold">Subject</h2>
+                    <input type="text" name="subject" required>
+                </div>
+            </div>
+            <h2 class="input_message_box_title quattrocento_bold">Message</h2>
+            <textarea name="message" rows="8" required></textarea>
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            <button class="quattrocento_bold form_submit_btn" type="submit"><span></span>Submit</button>
+        </form>
     </div>
 
     <!-- garden maintenance subscription -->
@@ -186,22 +219,54 @@
     <!-- featured blog -->
     <div class="featured_blog">
         <div class="featured_img_cont">
-            <a href="/blog"><img class="featured_blog_img" src="/assets/stock_img/stock_modern-home.jpg" alt=""><span class="img_hover_tag oswald">Go to Blog</span></a>
+            <a href="/blog"><img class="featured_blog_img" src="/assets/projects_img/kumeu_topdown1.jpg" alt=""><span class="img_hover_tag oswald">Go to Blog</span></a>
         </div>
         <a class="featured_blog_title quattrocento_bold" href="/blog posts/blog_prepping-your-propery-for-sale">The Ultimate Guide to Prepping Your Property for Sale</a>
     </div>
 
-    <!-- secondary featured blog -->
-    <div class="second_featured_blog">
-        <div class="second_featured_heading">
-            <h1 class="featured_heading_element quattrocento_bold">A Site for</h1>
-            <h1 class="featured_heading_element oswald">EVERYONE</h1>
+    <!-- testimonials -->
+    <div class="testimonial_cont">
+        <div class="business_brief_cont">
+            <h1 class="oswald">Auckland Based. Proudly Local</h1>
+            <p class="quattrocento_regular">Elysion is a New Zealand-owned business built right here in Auckland. We work across the North Shore, West Auckland, Central, and beyond - offering reliable, high-quality property care with a personal touch.</p>
+            <p class="quattrocento_regular">Whether you're a homeowner, investor, property manager, or builder, we make outdoor services simple, smart, and stress-free.</p>
+            <p class="quattrocento_bold business_brief_link"><a href="/about">About Us</a></p>
         </div>
-        <div class="second_featured_blog_cont">
-            <div class="second_featured_img_cont">
-                <a href="/blog"><img class="second_featured_blog_img" src="/assets/stock_img/stock_washing-stairs.jpg" alt=""><span class="img_hover_tag oswald">Go to Blog</span></a>
+        <div class="testimonial_slider_cont">
+            <div class="testimonial_card">
+                <p class="quattrocento_regular">"I'm impressed with the level of craftsmanship and care the team put into our landscaping project. They completely reimagined our front yard and brought new life to it with beautiful planting, clean edges, and a layout that really suits our home. Communication was excellent throughout, and the results speak for themselves. It's easily one of the best investments we've made in our property."</p>
+                <div class="testimonial_card_author">
+                    <h1 class="oswald">Jenny R.</h1>
+                    <p class="quattrocento_regular">Silverdale</p>
+                </div>
             </div>
-            <a class="second_featured_blog_title quattrocento_bold" href="/blog posts/blog_soft-vs-pressure-washing">Soft Washing vs Pressure Washing - What's Best for Your Home?</a>
+            <div class="testimonial_card">
+                <p class="quattrocento_regular">"I never thought our small backyard could look this good! The team made smart use of the space and created a layout that feels both open and cozy. They handled everything - from clearing out old plants to installing new turf and garden beds with such care. It's now our favourite place to relax after a long day."</p>
+                <div class="testimonial_card_author">
+                    <h1 class="oswald">Tony C.</h1>
+                    <p class="quattrocento_regular">Birkdale</p>
+                </div>
+            </div>
+            <div class="testimonial_card">
+                <p class="quattrocento_regular">"We were blown away by the transformation of our garden. The landscaping team was professional, punctual, and incredibly skilled at what they do. They took the time to listen to our ideas and made thoughtful suggestions that really elevated the final design. Our outdoor space has become a true extension of our home, and we love spending time in it every day."</p>
+                <div class="testimonial_card_author">
+                    <h1 class="oswald">Sam L.</h1>
+                    <p class="quattrocento_regular">Henderson</p>
+                </div>
+            </div>
+            <div class="testimonial_card">
+                <p class="quattrocento_regular">"The team was respectful, efficient, and clearly passionate about their work. They turned our messy, unused backyard into a stunning and practical space we can enjoy year-round. I'd highly recommend them to anyone looking for high-quality landscaping services."</p>
+                <div class="testimonial_card_author">
+                    <h1 class="oswald">John T.</h1>
+                    <p class="quattrocento_regular">Takapuna</p>
+                </div>
+            </div>
+            <div class="testimonial_slider_indicator_cont">
+                <span class="slider_single_indicator"></span>
+                <span class="slider_single_indicator"></span>
+                <span class="slider_single_indicator"></span>
+                <span class="slider_single_indicator"></span>
+            </div>
         </div>
     </div>
 
@@ -221,7 +286,7 @@
             </div>
             <div class="app_intro_text">
                 <h1 class="oswald">The Elysion Platform is a revolutionary approach to Property Management</h1>
-                <p class="quattrocento_regular">The Elysion App is currently in development — a smart, simple way for property managers and homeowners to book, track, and manage outdoor services in real-time. From lawn mowing and pressure washing to full landscaping projects, you'll be able to coordinate everything from your phone.</p>
+                <p class="quattrocento_regular">The Elysion App is currently in development - a smart, simple way for property managers and homeowners to book, track, and manage outdoor services in real-time. From lawn mowing and pressure washing to full landscaping projects, you'll be able to coordinate everything from your phone.</p>
             </div>
         </div>
     </div>

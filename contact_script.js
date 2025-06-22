@@ -22,7 +22,6 @@ dropdownBtn.addEventListener("click", (e) => {
 });
 
 // Auto scroll after inactivity
-
 function autoScroll() {
     const scrollTarget = document.querySelector(".homepg_hero");
     const scrollDuration = 1500;
