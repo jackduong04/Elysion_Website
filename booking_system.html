@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lawn Mowing Booking</title>
+    <style>
+        body {
+            background-color: #f0f4f8;
+            padding-top: 4rem;
+        }
+        .menu {
+            flex: 2;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            width: 55%;
+            margin: auto;
+        }
+        .services {
+            margin-top: 1rem;
+        }
+        .service-item {
+            margin: 0.75rem 0;
+            padding: 1rem 3rem;
+            background: #eef2f7;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .service-item button {
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .service-item button:hover {
+            background: #0056b3;
+        }
+        select {
+            -webkit-appearance: none;  /* Safari/Chrome */
+            -moz-appearance: none;     /* Firefox */
+            appearance: none;          /* Standard */
+            background: white url('data:image/svg+xml;utf8,<svg fill=\"black\" height=\"24\" viewBox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M7 10l5 5 5-5z\"/></svg>') no-repeat right 1rem center;
+            background-size: 1.5rem;
+            padding: 1rem 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            width: 400px;
+        }
+        button {
+            padding: 1rem;
+            cursor: pointer;
+        }
+        /* --- Modal (overlay + popup) --- */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            display: none;  /* toggled to flex when open */
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .modal {
+            width: min(680px, 92vw);
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+        }
+
+        .modal__cover {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            background: #e9eef4;
+        }
+
+        .modal__body {
+            padding: 1.25rem 1.5rem 1.5rem;
+        }
+
+        .modal__header {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .modal__title {
+            margin: 0;
+        }
+
+        .modal__price {
+            margin: 0.25rem 0 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .modal__desc {
+            color: #334155;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .modal__meta {
+            font-size: 0.95rem;
+            color: #475569;
+            margin-bottom: 1rem;
+        }
+
+        .modal__actions {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn--primary {
+            background: #007bff;
+            color: #fff;
+        }
+
+        .btn--primary:hover { background: #0056b3; }
+        .btn--ghost {
+            background: #eef2f7;
+        }
+        .modal__close {
+            background: transparent;
+            border: none;
+            font-size: 1.75rem;
+            line-height: 1;
+            cursor: pointer;
+            color: #64748b;
+        }
+        /* .view-details-btn {
+            background: #0f172a;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 0.5rem 0.8rem;
+            cursor: pointer;
+        }
+        .view-details-btn:hover { background: #0b1221; } */
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <h2>Select a Service</h2>
+        <select id="serviceMenu">
+            <option value="lawn_mowing">Lawn Mowing</option>
+            <option value="soft_house_washing">Soft House Washing</option>
+            <option value="pressure_washing">Pressure Washing</option>
+        </select>
+        
+        <h2 id="sizeLabel">Select Size</h2>
+        <select id="sizeMenu"></select>
+
+        <div class="services" id="servicesList"></div>
+    </div>
+    <!-- Service Details Modal -->
+    <div id="detailsOverlay" class="modal-overlay" onclick="closeDetails(event)">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="detailsTitle" onclick="event.stopPropagation()">
+            <img id="detailsCover" class="modal__cover" src="" alt="">
+            <div class="modal__body">
+                <div class="modal__header">
+                    <div>
+                    <h2 id="detailsTitle" class="modal__title"></h2>
+                    <p id="detailsPrice" class="modal__price"></p>
+                    <p id="detailsMeta" class="modal__meta"></p>
+                    </div>
+                    <button class="modal__close" aria-label="Close" onclick="closeDetails(event)">&times;</button>
+                </div>
+                <p id="detailsDesc" class="modal__desc"></p>
+                <div class="modal__actions">
+                    <button class="btn btn--ghost" onclick="closeDetails(event)">Close</button>
+                    <button id="detailsAddBtn" class="btn btn--primary">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const servicePrices = {
+            lawn_mowing: {
+                small: { normal_grass: 11, long_grass: 21, overgrown_grass: 31 },
+                medium: { normal_grass: 41, long_grass: 51, overgrown_grass: 61 },
+                large: { normal_grass: 71, long_grass: 81, overgrown_grass: 91 },
+                xLarge: { normal_grass: 101, long_grass: 111, overgrown_grass: 121 }
+            },
+            soft_house_washing: {
+                small: { single_storey: 12, double_storey: 22, triple_storey: 32 },
+                medium: { single_storey: 42, double_storey: 52, triple_storey: 62 },
+                large: { single_storey: 72, double_storey: 82, triple_storey: 92 },
+                xLarge: { single_storey: 102, double_storey: 112, triple_storey: 122 }
+            },
+            pressure_washing: {
+                small: { decks_and_driveway: 13, fences_and_walls: 23, patios_and_pavers: 33 },
+                medium: { decks_and_driveway: 43, fences_and_walls: 53, patios_and_pavers: 63 },
+                large: { decks_and_driveway: 73, fences_and_walls: 83, patios_and_pavers: 93 },
+                xLarge: { decks_and_driveway: 103, fences_and_walls: 113, patios_and_pavers: 123 }
+            }
+        };
+
+        const serviceSizes = {
+            lawn_mowing: {
+                small: "Small (1 - 50 sqm)",
+                medium: "Medium (51 - 125 sqm)",
+                large: "Large (126 - 255 sqm)",
+                xLarge: "Extra Large (256 - 350 sqm)"
+            },
+            soft_house_washing: {
+                small: "Small (under 150 sqm)",
+                medium: "Medium (151 - 225 sqm)",
+                large: "Large (226 - 300 sqm)",
+                xLarge: "Extra Large (301 - 400 sqm)"
+            },
+            pressure_washing: {
+                small: "Small --",
+                medium: "Medium --",
+                large: "Large --",
+                xLarge: "Extra Large --"
+            }
+        };
+
+        let cart = [];
+
+        function populateSizeMenu(service) {
+            const sizeMenu = document.getElementById("sizeMenu");
+            const sizes = serviceSizes[service];
+            sizeMenu.innerHTML = "";
+            for (const size in sizes) {
+                const option = document.createElement("option");
+                option.value = size;
+                option.textContent = sizes[size];
+                sizeMenu.appendChild(option);
+            }
+        };
+
+        // Basic marketing content per service/condition.
+        const serviceContent = {
+            lawn_mowing: {
+                cover: "/assets/booking_system_img/normal_grass.jpg",
+                desc: "Professional lawn mowing with neat edging and clippings removal. Ideal for regular maintenance or a quick spruce-up.",
+                byCondition: {
+                    normal: "Grass length is manageable. Perfect for routine care.",
+                    long: "Grass is longer than usual—includes slower passes for a clean, even cut.",
+                    overgrown: "Heavily overgrown lawn. Includes multiple cuts if needed to restore shape."
+                },
+                label: "Lawn Mowing"
+            },
+            soft_house_washing: {
+                cover: "/assets/booking_system_img/soft_housewash.jpg",
+                desc: "Soft house washing to remove grime, algae, and dust—gentle on paint, tough on dirt.",
+                byCondition: {
+                    single: "Single-storey dwelling soft-wash of exterior walls and eaves.",
+                    double: "Double-storey exterior soft-wash. Includes careful application and rinse.",
+                    triple: "Large/multi-level exterior soft-wash for expansive homes."
+                },
+                label: "Soft House Washing"
+            }
+        };
+
+        // Modal element refs
+        const overlayEl = document.getElementById("detailsOverlay");
+        const coverEl   = document.getElementById("detailsCover");
+        const titleEl   = document.getElementById("detailsTitle");
+        const priceEl   = document.getElementById("detailsPrice");
+        const metaEl    = document.getElementById("detailsMeta");
+        const descEl    = document.getElementById("detailsDesc");
+        const addBtnEl  = document.getElementById("detailsAddBtn");
+
+        // Keep last selection so "Add" in modal can call addToCart
+        let lastDetailsPayload = null;
+
+        function openDetails(service, size, condition, price) {
+            const meta = serviceContent[service] || {};
+            const prettyService   = meta.label || capitalize(service);
+            const prettySize      = (serviceSizes[service] && serviceSizes[service][size]) ? serviceSizes[service][size] : capitalize(size);
+            const prettyCondition = capitalize(condition);
+
+            const cover = meta.cover;
+            const baseDesc = meta.desc;
+            const condDesc = (meta.byCondition && meta.byCondition[condition]) ? meta.byCondition[condition] : "";
+
+            coverEl.src = cover;
+            coverEl.alt = prettyService + " cover";
+            titleEl.textContent = `${prettyService}`;
+            priceEl.textContent = `$${price}`;
+            metaEl.textContent = `${prettySize} • ${prettyCondition}`;
+            descEl.textContent = condDesc ? `${baseDesc} ${condDesc}` : baseDesc;
+
+            lastDetailsPayload = { service: prettyService, size: capitalize(size), condition: prettyCondition, price };
+
+            addBtnEl.onclick = function() {
+                addToCart(service, size, condition, price);
+                closeDetails();
+            };
+
+            overlayEl.style.display = "flex";
+            document.body.style.overflow = "hidden"; // Prevent background scroll
+        }
+
+        function closeDetails(e) {
+            overlayEl.style.display = "none";
+            document.body.style.overflow = "";
+        }
+
+        function renderServices(service, size) {
+            const container = document.getElementById("servicesList");
+            container.innerHTML = "";
+            const options = Object.keys(servicePrices[service][size]);
+
+            options.forEach(condition => {
+                const price = servicePrices[service][size][condition];
+                const div = document.createElement("div");
+                div.className = "service-item";
+                div.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 3rem;">
+                        <img src="${serviceContent[service]?.cover || ''}" alt="${service} cover" 
+                            style="width: 120px; height: 100px; object-fit: cover; border-radius: 6px;">
+                        <div>
+                            <h3>${capitalize(condition)}</h3>
+                            <h2>From $${price}</h2>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="view-details-btn"
+                            onclick="openDetails('${service}', '${size}', '${condition}', ${price})">
+                            View Details
+                        </button>
+                        <button onclick="addToCart('${service}', '${size}', '${condition}', ${price})">
+                            Add
+                        </button>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        };
+
+        function addToCart(service, size, condition, price) {
+            // Send to parent window
+            window.parent.postMessage({
+                type: "ADD_TO_CART",
+                service: capitalize(service),
+                size: capitalize(size),
+                condition: capitalize(condition),
+                price
+            }, "*");
+        };
+
+        document.getElementById("serviceMenu").addEventListener("change", function() {
+            const service = this.value;
+            // document.getElementById("sizeLabel").textContent = service === 'lawn' ? 'Select Lawn Size' : 'Select House Size';
+            populateSizeMenu(service);
+            const size = document.getElementById("sizeMenu").value;
+            renderServices(service, size);
+        });
+
+        document.getElementById("sizeMenu").addEventListener("change", function() {
+            const service = document.getElementById("serviceMenu").value;
+            renderServices(service, this.value);
+        });
+
+        function capitalize(str) {
+            return str
+                .split('_')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+        }
+
+        // Initial render
+        populateSizeMenu("lawn");
+        renderServices("lawn", "small");
+    </script>
+</body>
+</html>

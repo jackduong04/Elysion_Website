@@ -14,25 +14,30 @@
     margin: 0;
     padding: 0;
 }
+/* iframe */
+iframe {
+    border: none;
+    margin: 50px 0;
+}
 
 /* fonts */
 .oswald {
-  font-family: "Oswald", sans-serif;
-  font-optical-sizing: auto;
-  /* font-weight: 200 - 700 */
-  font-style: normal;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    /* font-weight: 200 - 700 */
+    font-style: normal;
 }
 
 .quattrocento_regular {
-  font-family: "Quattrocento", serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Quattrocento", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .quattrocento_bold {
-  font-family: "Quattrocento", serif;
-  font-weight: 700;
-  font-style: normal;
+    font-family: "Quattrocento", serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 /* preloader */
@@ -177,6 +182,33 @@
 }
 .navbar_service_sublinks li:nth-child(4) a:hover {
     color: var(--logo-marketready-color);
+}
+
+/* fixed CTA buttons */
+.fixed_cta_btn {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    z-index: 8;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fixed_cta_btn button {
+    font-size: 1.6rem;
+    padding: 15px 60px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--cultured-white-color);
+    color: var(--maintext-color);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.fixed_cta_btn button:hover {
+    background-color: var(--maintext-color);
+    color: var(--cultured-white-color);
 }
 
 /* homepage hero section */
@@ -1896,6 +1928,12 @@
         transition: all 0.3s ease-in-out;
     }
 
+    /* fixed CTA buttons */
+    .fixed_cta_btn button {
+        font-size: 1.3rem;
+        padding: 15px 50px;
+    }
+
     /* homepage hero */
     .hero_text_cont {
         gap: 40px;
@@ -2177,6 +2215,12 @@
     /* navbar */
     .navbar_cont {
         padding: 0 50px;
+    }
+
+    /* fixed CTA buttons */
+    .fixed_cta_btn {
+        flex-direction: row;
+        bottom: 3%;
     }
 
     /* homepage hero */
@@ -2542,6 +2586,25 @@
 
     .navbar_service_sublinks {
         padding: 10px 35px;
+    }
+
+    /* fixed CTA buttons */
+    .fixed_cta_btn {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-top: 1px solid var(--maintext-color);
+        gap: 0;
+    }
+
+    .fixed_cta_btn a {
+        width: 50%;
+    }
+
+    .fixed_cta_btn button {
+        border-radius: 0;
+        padding: 15px 0;
+        width: 100%;
     }
 
     /* homepage hero */
