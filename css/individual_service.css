@@ -1,0 +1,350 @@
+.individual_servicepg_hero {
+    width: 75vw;
+    margin: auto;
+}
+
+.individual_servicepg_hero h1 {
+    font-size: 8rem;
+    font-weight: 600;
+    color: var(--page-color-theme);
+    margin-top: 200px;
+}
+
+.individual_servicepg_hero p {
+    font-size: 1.8rem;
+    color: var(--maintext-color);
+    line-height: 1.5;
+    margin-top: 50px;
+}
+
+/* Before after photo section */
+.bfaft_cont {
+    width: 40vw;
+    margin: 200px auto;
+    position: relative;
+    cursor: col-resize;
+}
+
+.img_bf {
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+}
+
+.bfaft_cont img {
+    object-fit: cover;
+    width: 40vw;
+    height: calc(40vw / 4 * 3);
+}
+
+/* Sub-service description and link */
+.subsv_desc_cont {
+    width: 80vw;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.subsv_desc_cont a {
+    text-decoration: none;
+    font-size: 3rem;
+    color: var(--page-color-theme);
+    font-weight: 500;
+    line-height: 2;
+    box-shadow: 0px -1px 0px 0px var(--maintext-color) inset;
+    transition: all 0.3s ease-in-out;
+}
+.subsv_desc_cont a:hover {
+    box-shadow: 0px -1.5rem 0px 0px var(--normal-hover-color) inset;
+}
+
+.subsv_desc_cont h2 {
+    font-size: 3rem;
+    color: var(--page-color-theme);
+    font-weight: 500;
+    line-height: 2;
+}
+
+.subsv_desc_cont p {
+    font-size: 1.8rem;
+    color: var(--maintext-color);
+    line-height: 1.5;
+}
+
+/* Values section */
+.value_section {
+    width: 90vw;
+    margin: 200px auto;
+}
+
+.individual_value h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    line-height: 1.25;
+}
+
+.individual_value:nth-child(1) .value_title {
+    color: var(--logo-landscape-color);
+}
+.individual_value:nth-child(2) .value_title {
+    color: var(--logo-pressurewashing-color);
+}
+.individual_value:nth-child(3) .value_title {
+    color: var(--logo-painting-color);
+}
+.individual_value:nth-child(4) .value_title {
+    color: var(--logo-marketready-color);
+}
+.individual_value:nth-child(5) .value_title {
+    color: var(--property-services-color);
+}
+
+/* CTA format */
+.cta_cont {
+    width: 80vw;
+    margin: 250px auto;
+    text-align: center;
+}
+
+.cta_title {
+    font-size: 6rem;
+    font-weight: 600;
+    color: var(--maintext-color);
+    text-align: center;
+}
+
+.cta_cont p {
+    margin: 100px 0;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--maintext-color);
+    line-height: 1.5;
+}
+
+.cta_link {
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: var(--maintext-color);
+}
+
+.cta_span {
+    padding: 20px 100px;
+    background-color: var(--cultured-white-color);
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+}
+.cta_span:hover {
+    background-color: var(--maintext-color);
+    color: var(--cultured-white-color);
+}
+
+@media screen and (max-width: 1550px) {
+    .individual_servicepg_hero h1 {
+        font-size: 7.5rem;
+    }
+
+    .individual_servicepg_hero p, .subsv_desc_cont p, .individual_value h1 {
+        font-size: 1.7rem;
+    }
+
+    .subsv_desc_cont a, .subsv_desc_cont h2 {
+        font-size: 2.8rem;
+    }
+    .subsv_desc_cont a:hover {
+        box-shadow: 0px -1.4rem 0px 0px var(--normal-hover-color) inset;
+    }
+
+    /* CTA format */
+    .cta_cont {
+        margin: 200px auto;
+    }
+
+    .cta_link, .subscription_title p {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .individual_servicepg_hero h1 {
+        font-size: 6.5rem;
+    }
+
+    .individual_servicepg_hero p, .subsv_desc_cont p, .individual_value h1 {
+        font-size: 1.6rem;
+    }
+
+    .bfaft_cont {
+        width: 55vw;
+    }
+
+    .bfaft_cont img {
+        width: 55vw;
+        height: calc(55vw / 4 * 3);
+    }
+
+    .subsv_desc_cont a, .subsv_desc_cont h2 {
+        font-size: 2.6rem;
+    }
+    .subsv_desc_cont a:hover {
+        box-shadow: 0px -1.3rem 0px 0px var(--normal-hover-color) inset;
+    }
+
+    /* CTA format */
+    .cta_cont p {
+        font-size: 1.4rem;
+    }
+
+    .cta_link, .subscription_title p {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .individual_servicepg_hero h1 {
+        font-size: 5.5rem;
+    }
+
+    .individual_servicepg_hero p, .subsv_desc_cont p, .individual_value h1 {
+        font-size: 1.5rem;
+    }
+
+    .bfaft_cont {
+        width: 65vw;
+    }
+
+    .bfaft_cont img {
+        width: 65vw;
+        height: calc(65vw / 4 * 3);
+    }
+
+    .subsv_desc_cont a, .subsv_desc_cont h2 {
+        font-size: 2.4rem;
+    }
+    .subsv_desc_cont a:hover {
+        box-shadow: 0px -1.2rem 0px 0px var(--normal-hover-color) inset;
+    }
+
+    .value_section {
+        margin: 150px auto;
+    }
+
+    /* CTA format */
+    .cta_cont {
+        width: 80vw;
+    }
+
+    .cta_cont p {
+        font-size: 1.3rem;
+        margin: 70px 0;
+    }
+
+    .cta_link, .subscription_title p {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .individual_servicepg_hero h1 {
+        font-size: 4.2rem;
+    }
+
+    .individual_servicepg_hero p, .subsv_desc_cont p, .individual_value h1 {
+        font-size: 1.3rem;
+    }
+
+    .bfaft_cont {
+        width: 70vw;
+        margin: 100px auto;
+    }
+
+    .bfaft_cont img {
+        width: 70vw;
+        height: calc(70vw / 4 * 3);
+    }
+
+    .subsv_desc_cont {
+        margin: 70px auto;
+    }
+
+    .subsv_desc_cont a, .subsv_desc_cont h2 {
+        font-size: 2rem;
+    }
+    .subsv_desc_cont a:hover {
+        box-shadow: 0px -1rem 0px 0px var(--normal-hover-color) inset;
+    }
+
+    /* CTA format */
+    .cta_cont {
+        margin: 100px auto;
+    }
+    
+    .cta_cont p {
+        font-size: 1.2rem;
+    }
+
+    .cta_link, .subscription_title p {
+        font-size: 1.4rem;
+    }
+
+    .cta_span {
+        padding: 20px 80px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .individual_servicepg_hero {
+        width: 85vw;
+    }
+
+    .individual_servicepg_hero h1 {
+        font-size: 3rem;
+        margin-top: 100px;
+    }
+
+    .individual_servicepg_hero p, .subsv_desc_cont p, .individual_value h1 {
+        font-size: 1.1rem;
+    }
+
+    .bfaft_cont {
+        width: 75vw;
+        margin: 100px auto;
+    }
+
+    .bfaft_cont img {
+        width: 75vw;
+        height: calc(75vw / 4 * 3);
+    }
+
+    .subsv_desc_cont {
+        margin: 50px auto;
+    }
+
+    .subsv_desc_cont a, .subsv_desc_cont h2 {
+        font-size: 1.6rem;
+    }
+    .subsv_desc_cont a:hover {
+        box-shadow: 0px -0.8rem 0px 0px var(--normal-hover-color) inset;
+    }
+
+    .value_section {
+        margin: 100px auto;
+    }
+
+    /* CTA format */
+    .cta_cont {
+        width: 90vw;
+        margin: 90px auto;
+    }
+
+    .cta_cont p {
+        font-size: 1.1rem;
+        margin: 50px 0;
+    }
+
+    .cta_link, .subscription_title p {
+        font-size: 1.2rem;
+    }
+
+    .cta_span {
+        padding: 20px 50px;
+    }
+}

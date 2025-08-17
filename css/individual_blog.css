@@ -1,0 +1,112 @@
+.single_blog_wrapper {
+    max-width: 80vw;
+    margin: 200px auto;
+    line-height: 1.5;
+}
+
+.single_blog_wrapper h1 {
+    font-size: 4rem;
+    font-weight: 500;
+    color: var(--maintext-color);
+}
+
+.single_blog_header p, .blog_section_cont p, .blog_section_cont ul li {
+    font-size: 1.5rem;
+    color: var(--maintext-color);
+}
+
+.blog_post_time {
+    text-align: right;
+    margin: 100px 0;
+}
+
+.blog_section_cont {
+    margin: 100px 0;
+}
+
+.blog_section_cont h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--maintext-color);
+}
+
+.blog_section_cont ul {
+    margin: 30px;
+}
+
+.blog_section_cont img, .single_blog_header img {
+    width: 60%;
+    height: auto;
+    display: block;
+    margin: 100px auto;
+}
+
+@media screen and (max-width: 1550px) {
+    .single_blog_wrapper h1 {
+        font-size: 3rem;
+    }
+
+    .single_blog_header p, .blog_section_cont p, .blog_section_cont ul li {
+        font-size: 1.3rem;
+    }
+
+    .blog_post_time {
+        margin: 50px 0;
+    }
+
+    .blog_section_cont h2 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .single_blog_wrapper h1 {
+        font-size: 2.7rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .single_blog_wrapper h1 {
+        font-size: 2.4rem;
+    }
+
+    .single_blog_header p, .blog_section_cont p, .blog_section_cont ul li {
+        font-size: 1.2rem;
+    }
+
+    .blog_section_cont h2 {
+        font-size: 1.7rem;
+    }
+
+    .blog_section_cont img, .single_blog_header img {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .single_blog_wrapper h1 {
+        font-size: 1.9rem;
+    }
+
+    .single_blog_header p, .blog_section_cont p, .blog_section_cont ul li {
+        font-size: 1.1rem;
+    }
+
+    .blog_section_cont h2 {
+        font-size: 1.4rem;
+    }
+
+    .blog_section_cont img, .single_blog_header img {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .single_blog_header p, .blog_section_cont p, .blog_section_cont ul li {
+        font-size: 1rem;
+    }
+
+    .blog_section_cont h2 {
+        font-size: 1.3rem;
+    }
+}

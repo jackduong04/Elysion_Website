@@ -1,0 +1,64 @@
+/* Fix navbar with banner image */
+.navbar_cont {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1, h2 {
+    color: #2a7b4f;
+    margin: 1rem 0;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+}
+h1 { font-size: 3rem; }
+h2 { font-size: 1.8rem; }
+
+p {
+    margin: 1rem 0;
+    font-family: "Quattrocento", serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.highlight {
+    background-color: #e8f5e9;
+    padding: 1rem;
+    border-left: 4px solid #2a7b4f;
+    margin-top: 1rem;
+}
+.banner_img {
+    width: 100vw;
+    height: 60vh;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 750px) {
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.6rem; }
+    p { font-size: 1.1rem; }
+}
+
+@media screen and (max-width: 500px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.4rem; }
+    p { font-size: 1rem; }
+}

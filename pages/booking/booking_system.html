@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Booking System</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Quattrocento:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="/css/booking/booking_system.css">
+</head>
+<body>
+    <div class="menu" aria-live="polite">
+        <h2 class="oswald">Select a Service</h2>
+        <div class="field">
+        <label class="quattrocento_bold" for="serviceMenu">Service</label>
+            <select id="serviceMenu" class="select">
+                <option value="lawn_mowing">Lawn Mowing</option>
+                <option value="soft_house_washing">Soft House Washing</option>
+                <option value="pressure_washing">Pressure Washing</option>
+                <option value="garden_maintenance">Garden Subscription</option>
+            </select>
+        </div>
+
+        <h2 id="sizeLabel" class="oswald section-head">Select Size</h2>
+        <div class="field">
+            <label class="sr-only" for="sizeMenu">Size</label>
+            <select id="sizeMenu" class="select"></select>
+        </div>
+
+        <div class="services" id="servicesList"></div>
+    </div>
+
+    <!-- Service Details Modal -->
+    <div id="detailsOverlay" class="modal-overlay" onclick="closeDetails(event)">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="detailsTitle" onclick="event.stopPropagation()">
+            <img id="detailsCover" class="modal__cover" src="" alt="">
+            <div class="modal__body">
+                <div class="modal__header">
+                    <div>
+                        <h2 id="detailsTitle" class="modal__title oswald"></h2>
+                        <p id="detailsPrice" class="modal__price"></p>
+                        <p id="detailsMeta" class="modal__meta"></p>
+                    </div>
+                    <button class="modal__close" aria-label="Close" onclick="closeDetails(event)">&times;</button>
+                </div>
+                <p id="detailsDesc" class="modal__desc"></p>
+                <div class="modal__actions">
+                    <button class="btn btn-ghost" onclick="closeDetails(event)">Close</button>
+                    <button id="detailsAddBtn" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/booking/booking_system.js" defer></script>
+</body>
+</html>
