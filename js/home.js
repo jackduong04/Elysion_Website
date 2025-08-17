@@ -90,6 +90,18 @@ sliderIndicator[3].onclick = function() {
     sliderStopLoop();
 }
 
+// Add subscription packages to cart from home page
+const addSubscriptionToCart = (condition, price) => window.postMessage({
+    type: 'ADD_TO_CART',
+    service: 'Garden Subcription',
+    size: 'pOA',
+    condition,
+    price
+}, '*');
+bronze_subscription_homepg_add.onclick = () => addSubscriptionToCart('Bronze Package', 14);
+silver_subscription_homepg_add.onclick = () => addSubscriptionToCart('Silver Package', 24);
+gold_subscription_homepg_add.onclick = () => addSubscriptionToCart('Gold Package', 34);
+
 // Fade in scroll animation
 gsap.from(".navbar_cont", {
     scrollTrigger: {

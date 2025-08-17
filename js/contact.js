@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
         form.addEventListener('submit', () => {
             localStorage.removeItem('elysion_cart');
             localStorage.removeItem('elysion_checkout_cart');
+
+            form.reset(); 
         });
     }
 });

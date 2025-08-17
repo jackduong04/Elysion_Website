@@ -47,25 +47,25 @@ function renderCart() {
             row.className = "cart-row";
             row.innerHTML = `
                 <div class="cart-main">
-                <div class="cart-line">
-                    <span class="cart-name">${item.service}</span>
-                    <span class="price">$${line}</span>
-                </div>
-                <div class="cart-line">
-                    <span class="cart-meta">${item.size}${item.size && item.condition? " • " : ""}${item.condition}</span>
-                    <span class="qty">
-                    <button aria-label="Decrease" onclick="updateQuantity('${key}', -1)">−</button>
-                    <strong>${item.quantity}</strong>
-                    <button aria-label="Increase" onclick="updateQuantity('${key}', 1)">+</button>
-                    </span>
-                </div>
+                    <div class="cart-line">
+                        <span class="cart-name">${item.service}</span>
+                        <span class="price">From $${line}</span>
+                    </div>
+                    <div class="cart-line">
+                        <span class="cart-meta">${item.size}${item.size && item.condition? " • " : ""}${item.condition}</span>
+                        <span class="qty">
+                            <button aria-label="Decrease" onclick="updateQuantity('${key}', -1)">−</button>
+                            <strong>${item.quantity}</strong>
+                            <button aria-label="Increase" onclick="updateQuantity('${key}', 1)">+</button>
+                        </span>
+                    </div>
                 </div>
             `;
             cartItemsDiv.appendChild(row);
         });
     }
 
-    cartTotalDiv.textContent = `Total: $${total}`;
+    cartTotalDiv.textContent = `Total: From $${total}`;
     // Badge
     if (totalQty > 0) {
         cartBadge.style.display = "inline-flex";
@@ -124,5 +124,5 @@ window.addEventListener("message", (event) => {
 document.getElementById("checkoutBtn").addEventListener("click", () => {
     localStorage.setItem('elysion_checkout_intent', 'true');
     localStorage.setItem("elysion_checkout_cart", JSON.stringify(cart));
-    window.location.href = '/pages/main/contact.html';
+    window.location.href = '../main/contact';
 });

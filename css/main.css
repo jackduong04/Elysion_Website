@@ -26,6 +26,12 @@
 iframe {
     border: none;
     margin: 50px 0;
+    height: 1200px;
+}
+@media (max-width: 515px) {
+    iframe {
+        height: 1500px;
+    }
 }
 
 /* Fonts */
@@ -120,6 +126,7 @@ iframe {
 .navbar_links {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 60px;
 }
 
@@ -213,7 +220,6 @@ iframe {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
-
 .fixed_cta_btn button:hover {
     background-color: var(--maintext-color);
     color: var(--cultured-white-color);
@@ -488,7 +494,6 @@ iframe {
         scale: 0;
         transform-origin: top right;
         transition: all 0.4s ease-in-out;
-        text-align: center;
     }
     .navbar_links.active {
         scale: 1;
@@ -692,7 +697,7 @@ iframe {
     display: inline-flex;
     align-items: center;
     gap: .4rem;
-    padding: .2rem .8rem;
+    padding: .5rem 1rem;
     border: 1px solid var(--border);
     border-radius: 10px;
     background: #fff;
@@ -726,13 +731,19 @@ iframe {
     max-width: calc(100vw - 24px);
     max-height: 70vh;
     overflow: hidden;
-    display:none;
+    display: none;
     z-index: 999;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 14px;
     box-shadow: 0 24px 60px rgba(2,6,23,.35);
 }
+@media (max-width: 500px) {
+    #navbarCartPopup {
+        width: 330px;
+    }
+}
+
 .cart-head {
     display: flex;
     align-items: center;
@@ -741,11 +752,13 @@ iframe {
     padding: .9rem 1rem;
     border-bottom: 1px solid var(--border);
 }
+
 .cart-title {
     margin: 0;
     font-family:"Oswald", sans-serif;
     letter-spacing: .3px;
 }
+
 .cart-close {
     background: #fff;
     border: 1px solid var(--border);
@@ -763,11 +776,13 @@ iframe {
     box-shadow:0 0 0 3px var(--ring);
     color: #0f172a;
 }
+
 .cart-body {
     padding: .75rem 1rem;
     max-height: calc(70vh - 140px);
-    overflow:auto;
+    overflow: auto;
 }
+
 .empty {
     text-align: center;
     color: var(--muted);
@@ -785,11 +800,13 @@ iframe {
     padding: .6rem .25rem;
     border-bottom: 1px solid #f1f5f9;
 }
+
 .cart-main {
     display: flex;
     flex-direction: column;
     gap: .25rem;
 }
+
 .cart-line {
     display: flex;
     align-items: center;
@@ -797,11 +814,14 @@ iframe {
     gap: .75rem;
     font-size:.95rem;
 }
+
 .cart-name { font-weight: 700; }
+
 .cart-meta {
     color: var(--muted);
     font-size: .9rem;
 }
+
 .qty {
     display: inline-flex;
     align-items: center;
@@ -811,6 +831,7 @@ iframe {
     padding: .25rem;
     background: #fff;
 }
+
 .qty button {
     border: none;
     background: transparent;
@@ -820,6 +841,7 @@ iframe {
     font-weight: 700;
 }
 .qty button:hover { color: var(--brand); }
+
 .price { font-weight: 700; }
 
 .cart-foot {
@@ -828,12 +850,14 @@ iframe {
     display: grid;
     gap: .6rem;
 }
+
 .total {
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-weight: 800;
 }
+
 #checkoutBtn {
     width: 100%;
     background: var(--brand);

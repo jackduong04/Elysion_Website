@@ -1,4 +1,53 @@
-/* ---------- Data: Prices & Sizes ---------- */
+// Allow parent pages to choose the initial service/size
+const serviceAliases = {
+    lawn_mowing: 'lawn_mowing',
+    soft_house_washing: 'soft_house_washing',
+    pressure_washing: 'pressure_washing',
+    garden_subscription: 'garden_subscription',
+};
+
+function getInitFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    let service = params.get('service');
+    let size = params.get('size');
+
+    if (service) {
+        service = serviceAliases[service] || service;
+    }
+
+    return { service, size };
+}
+
+// Validate and apply init
+function applyInitRender(init) {
+    let service = init.service || 'lawn_mowing';
+    service = serviceAliases[service] || service;
+
+    if (!serviceSizes[service]) {
+        service = 'lawn_mowing';
+    }
+
+    let size = init.size || Object.keys(serviceSizes[service])[0];
+
+    if (!serviceSizes[service][size]) {
+        size = Object.keys(serviceSizes[service])[0];
+    }
+
+    const serviceMenu = document.getElementById('serviceMenu');
+    const sizeMenu = document.getElementById('sizeMenu');
+
+    if (serviceMenu) {
+        serviceMenu.value = service;
+    }
+    populateSizeMenu(service);
+
+    if (sizeMenu) {
+        sizeMenu.value = size;
+    }
+    renderServices(service, size);
+}
+
+// Data: Prices & Sizes
 const servicePrices = {
     lawn_mowing: {
         small: { normal_grass: 11, long_grass: 21, overgrown_grass: 31 },
@@ -13,12 +62,9 @@ const servicePrices = {
         xLarge: { single_storey: 102, double_storey: 112, triple_storey: 122 },
     },
     pressure_washing: {
-        small: { decks_and_driveway: 13, fences_and_walls: 23, patios_and_pavers: 33 },
-        medium: { decks_and_driveway: 43, fences_and_walls: 53, patios_and_pavers: 63 },
-        large: { decks_and_driveway: 73, fences_and_walls: 83, patios_and_pavers: 93 },
-        xLarge: { decks_and_driveway: 103, fences_and_walls: 113, patios_and_pavers: 123 },
+        per_30sqm: { decks_and_driveway: 13, fences_and_walls: 23, patios_and_pavers: 33 },
     },
-    garden_maintenance: {
+    garden_subscription: {
         pOA: { bronze_package: 14, silver_package: 24, gold_package: 34 },
     },
 };
@@ -37,17 +83,14 @@ const serviceSizes = {
         xLarge: "Extra Large (301 - 400 sqm)",
     },
     pressure_washing: {
-        small: "Small ***",
-        medium: "Medium ***",
-        large: "Large ***",
-        xLarge: "Extra Large ***",
+        per_30sqm: "Per 30sqm",
     },
-    garden_maintenance: {
-        pOA: "",
+    garden_subscription: {
+        pOA: "Price on application",
     },
 };
 
-/* ---------- Content (with per-condition support) ---------- */
+// Content (with per-condition support) 
 const serviceContent = {
     lawn_mowing: {
         label: "Lawn Mowing",
@@ -73,9 +116,9 @@ const serviceContent = {
         cover: "../../assets/booking_system_img/soft_housewash.jpg",
         desc: "Soft house washing to remove grime, algae, and dust - gentle on paint, tough on dirt.",
         byCondition: {
-            single: "Single-storey dwelling soft-wash of exterior walls and eaves.",
-            double: "Double-storey exterior soft-wash. Includes careful application and rinse.",
-            triple: "Large/multi-level exterior soft-wash for expansive homes.",
+            single_storey: { desc: "Single-storey dwelling soft-wash of exterior walls and eaves." },
+            double_storey: { desc: "Double-storey exterior soft-wash. Includes careful application and rinse." },
+            triple_storey: { desc: "Large/multi-level exterior soft-wash for expansive homes." },
         },
     },
     pressure_washing: {
@@ -97,28 +140,19 @@ const serviceContent = {
             },
         },
     },
-    garden_maintenance: {
+    garden_subscription: {
         label: "Garden Subscription",
-        cover: "../../assets/booking_system_img/decks_driveway.jpg",
+        cover: "../../assets/projects_img/remuera_one-off.jpg",
         desc: "Scheduled garden care to keep everything tidy.",
         byCondition: {
-            bronze_package: {
-                cover: '../../assets/booking_system_img/decks_driveway.jpg',
-                desc: 'Bronze package: light tidy and maintenance.',
-            },
-            silver_package: {
-                cover: '../../assets/booking_system_img/fences_walls.jpg',
-                desc: 'Silver package: regular tidy plus seasonal extras.',
-            },
-            gold_package: {
-                cover: '../../assets/booking_system_img/patios_pavers.jpg',
-                desc: 'Gold package: comprehensive monthly service.',
-            },
+            bronze_package: { desc: 'Bronze package: light tidy and maintenance.' },
+            silver_package: { desc: 'Silver package: regular tidy plus seasonal extras.' },
+            gold_package: { desc: 'Gold package: comprehensive monthly service.' },
         },
     },
 };
 
-/* ---------- Add-ons (always visible) ---------- */
+// Add-ons (always visible) 
 const addOnServices = {
     roof_treatment: {
         price: 551,
@@ -134,7 +168,7 @@ const addOnServices = {
     },
 }
 
-/* ---------- Helpers ---------- */
+// Helpers 
 function getCoverFor(service, condition) {
     const meta = serviceContent[service] || {};
     const cond = meta.byCondition?.[condition] || {};
@@ -153,7 +187,7 @@ function capitalize(str) {
         .join(' ');
 }
 
-/* ---------- Modal wiring ---------- */
+// Modal wiring 
 const overlayEl = document.getElementById("detailsOverlay");
 const coverEl   = document.getElementById("detailsCover");
 const titleEl   = document.getElementById("detailsTitle");
@@ -207,7 +241,7 @@ function closeDetails(e) {
     document.body.style.overflow = "";
 }
 
-/* ---------- UI renderers ---------- */
+// UI renderers 
 function populateSizeMenu(service) {
     const sizeMenu = document.getElementById("sizeMenu");
     const sizes = serviceSizes[service];
@@ -237,8 +271,8 @@ function renderServices(service, size) {
         <div class="service-left">
             <img class="thumb" src="${getCoverFor(service, condition)}" alt="${service} ${condition} cover">
             <div class="service-text">
-            <h3 class="quattrocento_bold">${capitalize(condition)}</h3>
-            <h2 class="oswald">From $${price}</h2>
+                <h3 class="quattrocento_bold">${capitalize(condition)}</h3>
+                <h2 class="oswald">From $${price}</h2>
             </div>
         </div>
         <div class="service-right">
@@ -265,8 +299,8 @@ function renderServices(service, size) {
         <div class="service-left">
             <img class="thumb" src="${cover}" alt="${label} cover">
             <div class="service-text">
-            <h3 class="quattrocento_bold">${label}</h3>
-            <h2 class="oswald">From $${price}</h2>
+                <h3 class="quattrocento_bold">${label}</h3>
+                <h2 class="oswald">From $${price}</h2>
             </div>
         </div>
         <div class="service-right">
@@ -278,7 +312,7 @@ function renderServices(service, size) {
     });
 }
 
-/* ---------- Cart bridge to parent ---------- */
+// Cart bridge to parent 
 function addToCart(service, size, condition, price) {
     window.parent.postMessage({
         type: "ADD_TO_CART",
@@ -289,7 +323,7 @@ function addToCart(service, size, condition, price) {
     }, "*");
 };
 
-/* ---------- Event wiring & initial render ---------- */
+// Event wiring & initial render 
 document.getElementById("serviceMenu").addEventListener("change", function() {
     const service = this.value;
     populateSizeMenu(service);
@@ -303,5 +337,4 @@ document.getElementById("sizeMenu").addEventListener("change", function() {
 });
 
 // Initial render
-populateSizeMenu("lawn_mowing");
-renderServices("lawn_mowing", "small");
+applyInitRender(getInitFromURL());

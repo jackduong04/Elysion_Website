@@ -45,7 +45,7 @@ img { display: block; max-width: 100% }
 
 .quattrocento_bold {
     font-family:"Quattrocento", serif;
-    font-weight:700;
+    font-weight: 700;
 }
 
 /* Card container */
@@ -130,6 +130,12 @@ h2 {
     align-items: center;
     gap: 1rem;
 }
+@media (max-width: 500px) {
+    .service-left {
+        flex-direction: column;
+        text-align: center;
+    }
+}
 
 .thumb {
     width: 120px;
@@ -150,11 +156,17 @@ h2 {
     font-size: 1.15rem;
 }
 
-.service-right{
+.service-right {
     display: flex;
     gap: .5rem;
     align-items: center;
     justify-content: flex-end;
+}
+@media (max-width: 650px) {
+    .service-right {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
 
 /* Buttons */
