@@ -51,26 +51,26 @@ const serviceSizes = {
 const serviceContent = {
     lawn_mowing: {
         label: "Lawn Mowing",
-        cover: "/assets/booking_system_img/normal_grass.jpg",
+        cover: "../../assets/booking_system_img/normal_grass.jpg",
         desc: "Professional lawn mowing with neat edging and clippings removal.",
         byCondition: {
             normal_grass: {
-                cover: '/assets/booking_system_img/normal_grass.jpg',
+                cover: '../../assets/booking_system_img/normal_grass.jpg',
                 desc: 'Grass length is manageable. Perfect for routine care.',
             },
             long_grass: {
-                cover: '/assets/booking_system_img/long_grass.jpg',
+                cover: '../../assets/booking_system_img/long_grass.jpg',
                 desc: 'Grass is longer than usual. Includes slower passes for a clean, even cut.',
             },
             overgrown_grass: {
-                cover: '/assets/booking_system_img/overgrown_grass.jpg',
+                cover: '../../assets/booking_system_img/overgrown_grass.jpg',
                 desc: 'Heavily overgrown lawn. Includes multiple cuts if needed to restore shape.',
             },
         },
     },
     soft_house_washing: {
         label: "Soft House Washing",
-        cover: "/assets/booking_system_img/soft_housewash.jpg",
+        cover: "../../assets/booking_system_img/soft_housewash.jpg",
         desc: "Soft house washing to remove grime, algae, and dust - gentle on paint, tough on dirt.",
         byCondition: {
             single: "Single-storey dwelling soft-wash of exterior walls and eaves.",
@@ -80,38 +80,38 @@ const serviceContent = {
     },
     pressure_washing: {
         label: "Pressure Washing",
-        cover: "/assets/booking_system_img/decks_driveway.jpg",
+        cover: "../../assets/booking_system_img/decks_driveway.jpg",
         desc: "High-pressure clean for hard surfaces.",
         byCondition: {
             decks_and_driveway: {
-                cover: '/assets/booking_system_img/decks_driveway.jpg',
+                cover: '../../assets/booking_system_img/decks_driveway.jpg',
                 desc: 'Lift grime and tire marks on decks and driveways.',
             },
             fences_and_walls: {
-                cover: '/assets/booking_system_img/fences_walls.jpg',
+                cover: '../../assets/booking_system_img/fences_walls.jpg',
                 desc: 'Refresh fence lines and boundary walls.',
             },
             patios_and_pavers: {
-                cover: '/assets/booking_system_img/patios_pavers.jpg',
+                cover: '../../assets/booking_system_img/patios_pavers.jpg',
                 desc: 'Restore patios and pavers to a brighter finish.',
             },
         },
     },
     garden_maintenance: {
         label: "Garden Subscription",
-        cover: "/assets/booking_system_img/decks_driveway.jpg",
+        cover: "../../assets/booking_system_img/decks_driveway.jpg",
         desc: "Scheduled garden care to keep everything tidy.",
         byCondition: {
             bronze_package: {
-                cover: '/assets/booking_system_img/decks_driveway.jpg',
+                cover: '../../assets/booking_system_img/decks_driveway.jpg',
                 desc: 'Bronze package: light tidy and maintenance.',
             },
             silver_package: {
-                cover: '/assets/booking_system_img/fences_walls.jpg',
+                cover: '../../assets/booking_system_img/fences_walls.jpg',
                 desc: 'Silver package: regular tidy plus seasonal extras.',
             },
             gold_package: {
-                cover: '/assets/booking_system_img/patios_pavers.jpg',
+                cover: '../../assets/booking_system_img/patios_pavers.jpg',
                 desc: 'Gold package: comprehensive monthly service.',
             },
         },
@@ -123,13 +123,13 @@ const addOnServices = {
     roof_treatment: {
         price: 551,
         label: "Roof Treatment",
-        cover: "/assets/booking_system_img/roof_treatment.jpg",
+        cover: "../../assets/booking_system_img/roof_treatment.jpg",
         desc: "Moss/mould treatment to extend roof life and improve appearance. Low-pressure application; results develop over weeks.",
     },
     gutter_cleaning: {
         price: 552,
         label: "Gutter Cleaning",
-        cover: "/assets/booking_system_img/gutter_cleaning.jpg",
+        cover: "../../assets/booking_system_img/gutter_cleaning.jpg",
         desc: "Remove leaves, debris, and blockages. Helps prevent overflow, leaks, and water damage during heavy rain.",
     },
 }
