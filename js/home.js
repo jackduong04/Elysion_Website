@@ -98,9 +98,9 @@ const addSubscriptionToCart = (condition, price) => window.postMessage({
     condition,
     price
 }, '*');
-bronze_subscription_homepg_add.onclick = () => addSubscriptionToCart('Bronze Package', 14);
-silver_subscription_homepg_add.onclick = () => addSubscriptionToCart('Silver Package', 24);
-gold_subscription_homepg_add.onclick = () => addSubscriptionToCart('Gold Package', 34);
+bronze_subscription_homepg_add.onclick = () => addSubscriptionToCart('Bronze Package', 100);
+silver_subscription_homepg_add.onclick = () => addSubscriptionToCart('Silver Package', 200);
+gold_subscription_homepg_add.onclick = () => addSubscriptionToCart('Gold Package', 300);
 
 // Fade in scroll animation
 gsap.from(".navbar_cont", {
