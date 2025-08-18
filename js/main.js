@@ -124,5 +124,5 @@ window.addEventListener("message", (event) => {
 document.getElementById("checkoutBtn").addEventListener("click", () => {
     localStorage.setItem('elysion_checkout_intent', 'true');
     localStorage.setItem("elysion_checkout_cart", JSON.stringify(cart));
-    window.location.href = '../main/contact';
+    window.location.href = '../../pages/main/contact';
 });

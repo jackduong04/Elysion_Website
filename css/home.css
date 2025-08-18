@@ -435,6 +435,10 @@
         margin-bottom: 50px;
     }
 
+    .aiotext {
+        font-size: 8.5rem;
+    }
+
     .aio_support_text p {
         font-size: 3rem;
     }
@@ -557,6 +561,14 @@
     }
     
     /* AIO section */
+    .aiotext {
+        font-size: 7rem;
+    }
+    
+    .aio_support_text p {
+        font-size: 2.5rem;
+    }
+    
     .homepg_service_cont {
         flex-wrap: wrap;
         gap: 60px;
@@ -690,6 +702,14 @@
         gap: 70px;
     }
 
+    .aiotext {
+        font-size: 6rem;
+    }
+
+    .aio_support_text p {
+        font-size: 2.2rem;
+    }
+
     /* Garden subscription */
     .subscription_title h1 {
         font-size: 3.5rem;
@@ -798,6 +818,14 @@
     /* AIO section */
     .aio_cont {
         gap: 70px;
+    }
+
+    .aiotext {
+        font-size: 4.5rem;
+    }
+
+    .aio_support_text p {
+        font-size: 1.7rem;
     }
 
     .homepg_service_cont {
@@ -916,6 +944,14 @@
 
     .aio_cont {
         gap: 40px;
+    }
+
+    .aiotext {
+        font-size: 3.5rem;
+    }
+
+    .aio_support_text p {
+        font-size: 1.3rem;
     }
 
     .homepg_service_cont {
