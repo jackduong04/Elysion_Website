@@ -32,8 +32,9 @@
 
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/individual_service.css">
+    <link rel="stylesheet" href="../../css/home.css">
 </head>
-<body class="body" style="--page-color-theme: #d34133">
+<body class="body" style="--page-color-theme: #1d6d28">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQKL4WX9"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -124,6 +125,59 @@
         width="100%" height="1200" title="Elysion Booking">
     </iframe>
 
+    <!-- Garden maintenance subscription -->
+    <div class="garden_subscription_cont" id="maintenance_subscription">
+        <div class="subscription_title">
+            <h1 class="oswald">Garden Subscription</h1>
+            <p class="quattrocento_regular">Get 20% off your first 3 months!</p>
+        </div>
+        <div class="subscription_card_cont">
+            <div class="subscription_card">
+                <h1 class="subs_pack_name oswald">Bronze</h1>
+                <p class="subs_description quattrocento_bold">
+                    Perfect for low-maintenance properties or tidy homeowners who just need the basics covered.
+                </p>
+                <div class="subscription_service_include">
+                    <p class="quattrocento_regular">Fortnightly lawn mowing & edging.</p>
+                    <p class="quattrocento_regular">General weed control.</p>
+                    <p class="quattrocento_regular">Light pruning and garden bed tidy-ups.</p>
+                    <p class="quattrocento_regular">Up to 50kg green waste removal per month.</p>
+                </div>
+                <button id="bronze_subscription_homepg_add" class="subscription_homepg_add">Add to Cart</button>
+            </div>
+            <div class="subscription_card">
+                <h1 class="subs_pack_name oswald">Silver</h1>
+                <p class="subs_description quattrocento_bold">
+                    Our most popular package - ideal for keeping your landscape consistently sharp.
+                </p>
+                <div class="subscription_service_include">
+                    <p class="quattrocento_regular">Everything in Bronze.</p>
+                    <p class="quattrocento_regular">Hedge trimming and shaping.</p>
+                    <p class="quattrocento_regular">Shrub and flax pruning.</p>
+                    <p class="quattrocento_regular">Seasonal fertilising.</p>
+                    <p class="quattrocento_regular">Up to 100kg green waste removal per month.</p>
+                </div>
+                <button id="silver_subscription_homepg_add" class="subscription_homepg_add">Add to Cart</button>
+            </div>
+            <div class="subscription_card">
+                <h1 class="subs_pack_name oswald">Gold</h1>
+                <p class="subs_description quattrocento_bold">
+                    For clients who want it all taken care of - especially useful for commercial sites, high-end homes, or busy landlords.
+                </p>
+                <div class="subscription_service_include">
+                    <p class="quattrocento_regular">Everything in Silver.</p>
+                    <p class="quattrocento_regular">Lomandra & native grass shaping.</p>
+                    <p class="quattrocento_regular">Regular tree pruning (under 4m).</p>
+                    <p class="quattrocento_regular">Monthly reporting & recommendations.</p>
+                    <p class="quattrocento_regular">Priority scheduling for add-ons and extras.</p>
+                    <p class="quattrocento_regular">Yearly mulch top up.</p>
+                </div>
+                <button id="gold_subscription_homepg_add" class="subscription_homepg_add">Add to Cart</button>
+            </div>
+        </div>
+        <a class="cta_link oswald" href="../main/contact"><span class="cta_span">Request Free Consultation</span></a>
+    </div>
+
     <!-- CTA section -->
     <div class="cta_cont">
         <h1 class="cta_title oswald">READY TO SIMPLIFY GARDEN MAINTENANCE?</h1>
@@ -182,5 +236,18 @@
 
     <script src="../../js/main.js" defer></script>
     <script src="../../js/individual_service.js" defer></script>
+    <script>
+        // Add subscription packages to cart from home page
+        const addSubscriptionToCart = (condition, price) => window.postMessage({
+            type: 'ADD_TO_CART',
+            service: 'Garden Subcription',
+            size: 'pOA',
+            condition,
+            price
+        }, '*');
+        bronze_subscription_homepg_add.onclick = () => addSubscriptionToCart('Bronze Package', 14);
+        silver_subscription_homepg_add.onclick = () => addSubscriptionToCart('Silver Package', 24);
+        gold_subscription_homepg_add.onclick = () => addSubscriptionToCart('Gold Package', 34);
+    </script>
 </body>
 </html>

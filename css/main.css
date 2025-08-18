@@ -25,7 +25,7 @@
 /* iframe */
 iframe {
     border: none;
-    margin: 50px 0;
+    margin-top: 50px;
     height: 1200px;
 }
 @media (max-width: 515px) {

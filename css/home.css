@@ -107,7 +107,7 @@
 /* Garden subscription */
 .garden_subscription_cont {
     width: 80vw;
-    margin: 300px auto;
+    margin: 200px auto;
     text-align: center;
 }
 
@@ -445,12 +445,15 @@
 
     /* Garden subscription */
     .garden_subscription_cont {
-        margin: 200px auto;
         width: 90vw;
     }
 
-    .subscription_title h1, .cta_title {
+    .subscription_title h1 {
         font-size: 4.5rem;
+    }
+
+    .subscription_title p {
+        font-size: 2rem;
     }
 
     .subscription_card_cont {
@@ -564,18 +567,13 @@
         height: calc(35vw / 1.85);
     }
 
-    /* CTA format */
-    .cta_cont p {
-        font-size: 1.4rem;
-    }
-
-    .cta_link, .subscription_title p {
-        font-size: 1.8rem;
-    }
-
     /* Garden subscription */
-    .subscription_title h1, .cta_title {
+    .subscription_title h1 {
         font-size: 4rem;
+    }
+
+    .subscription_title p {
+        font-size: 1.8rem;
     }
 
     .subscription_card_cont {
@@ -693,8 +691,12 @@
     }
 
     /* Garden subscription */
-    .subscription_title h1, .cta_title {
+    .subscription_title h1 {
         font-size: 3.5rem;
+    }
+
+    .subscription_title p {
+        font-size: 1.6rem;
     }
 
     .subscription_card_cont {
@@ -813,8 +815,12 @@
         margin-top: 150px;
     }
     
-    .subscription_title h1, .cta_title {
+    .subscription_title h1 {
         font-size: 2.7rem;
+    }
+
+    .subscription_title p {
+        font-size: 1.4rem;
     }
 
     .subs_description {
@@ -917,8 +923,12 @@
     }
 
     /* Garden subscription */
-    .subscription_title h1, .cta_title {
+    .subscription_title h1 {
         font-size: 2rem;
+    }
+
+    .subscription_title p {
+        font-size: 1.2rem;
     }
 
     .subscription_card_cont {

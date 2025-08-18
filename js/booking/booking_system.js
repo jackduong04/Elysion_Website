@@ -50,22 +50,22 @@ function applyInitRender(init) {
 // Data: Prices & Sizes
 const servicePrices = {
     lawn_mowing: {
-        small: { normal_grass: 11, long_grass: 21, overgrown_grass: 31 },
-        medium: { normal_grass: 41, long_grass: 51, overgrown_grass: 61 },
-        large: { normal_grass: 71, long_grass: 81, overgrown_grass: 91 },
-        xLarge: { normal_grass: 101, long_grass: 111, overgrown_grass: 121 },
+        small: { normal_grass: 44, long_grass: 54, overgrown_grass: 109 },
+        medium: { normal_grass: 49, long_grass: 59, overgrown_grass: 184 },
+        large: { normal_grass: 59, long_grass: 89, overgrown_grass: 249 },
+        xLarge: { normal_grass: 84, long_grass: 109, overgrown_grass: 344 },
     },
     soft_house_washing: {
-        small: { single_storey: 12, double_storey: 22, triple_storey: 32 },
-        medium: { single_storey: 42, double_storey: 52, triple_storey: 62 },
-        large: { single_storey: 72, double_storey: 82, triple_storey: 92 },
-        xLarge: { single_storey: 102, double_storey: 112, triple_storey: 122 },
+        small: { single_storey: 284, double_storey: 399, triple_storey: 514 },
+        medium: { single_storey: 454, double_storey: 569, triple_storey: 684 },
+        large: { single_storey: 629, double_storey: 744, triple_storey: 799 },
+        xLarge: { single_storey: 799, double_storey: 914, triple_storey: 1029 },
     },
     pressure_washing: {
-        per_30sqm: { decks_and_driveway: 13, fences_and_walls: 23, patios_and_pavers: 33 },
+        per_30sqm: { decks_and_driveway: 79, fences_and_walls: 79, patios_and_pavers: 79 },
     },
     garden_subscription: {
-        pOA: { bronze_package: 14, silver_package: 24, gold_package: 34 },
+        pOA: { bronze_package: 100, silver_package: 200, gold_package: 300 },
     },
 };
 
@@ -86,7 +86,7 @@ const serviceSizes = {
         per_30sqm: "Per 30sqm",
     },
     garden_subscription: {
-        pOA: "Price on application",
+        pOA: "POA (pricing shown below are just an estimate)",
     },
 };
 
@@ -116,9 +116,18 @@ const serviceContent = {
         cover: "../../assets/booking_system_img/soft_housewash.jpg",
         desc: "Soft house washing to remove grime, algae, and dust - gentle on paint, tough on dirt.",
         byCondition: {
-            single_storey: { desc: "Single-storey dwelling soft-wash of exterior walls and eaves." },
-            double_storey: { desc: "Double-storey exterior soft-wash. Includes careful application and rinse." },
-            triple_storey: { desc: "Large/multi-level exterior soft-wash for expansive homes." },
+            single_storey: {
+                desc: "Our house washing service for single-storey homes includes a full soft wash of" +
+                    "all exterior cladding, joinery, soffits, and visible eaves. Please ensure there is a working outdoor tap available for this service."
+            },
+            double_storey: {
+                desc: "Our house washing service for double-storey homes includes a full soft wash of" +
+                    "all exterior cladding, joinery, soffits, and visible eaves. Please ensure there is a working outdoor tap available for this service."
+            },
+            triple_storey: {
+                desc: "Our house washing service for triple-storey homes includes a full soft wash of" +
+                    "all exterior cladding, joinery, soffits, and visible eaves. Please ensure there is a working outdoor tap available for this service."
+            },
         },
     },
     pressure_washing: {
@@ -128,15 +137,15 @@ const serviceContent = {
         byCondition: {
             decks_and_driveway: {
                 cover: '../../assets/booking_system_img/decks_driveway.jpg',
-                desc: 'Lift grime and tire marks on decks and driveways.',
+                desc: 'Lift grime and tire marks on decks and driveways. Please ensure there is a working outdoor tap available for this service.',
             },
             fences_and_walls: {
                 cover: '../../assets/booking_system_img/fences_walls.jpg',
-                desc: 'Refresh fence lines and boundary walls.',
+                desc: 'Refresh fence lines and boundary walls. Please ensure there is a working outdoor tap available for this service.',
             },
             patios_and_pavers: {
                 cover: '../../assets/booking_system_img/patios_pavers.jpg',
-                desc: 'Restore patios and pavers to a brighter finish.',
+                desc: 'Restore patios and pavers to a brighter finish. Please ensure there is a working outdoor tap available for this service.',
             },
         },
     },
@@ -145,9 +154,15 @@ const serviceContent = {
         cover: "../../assets/projects_img/remuera_one-off.jpg",
         desc: "Scheduled garden care to keep everything tidy.",
         byCondition: {
-            bronze_package: { desc: 'Bronze package: light tidy and maintenance.' },
-            silver_package: { desc: 'Silver package: regular tidy plus seasonal extras.' },
-            gold_package: { desc: 'Gold package: comprehensive monthly service.' },
+            bronze_package: {
+                desc: 'Perfect for low-maintenance properties or tidy homeowners who just need the basics covered.'
+            },
+            silver_package: {
+                desc: 'Our most popular package - ideal for keeping your landscape consistently sharp.'
+            },
+            gold_package: {
+                desc: 'For clients who want it all taken care of - especially useful for commercial sites, high-end homes, or busy landlords.'
+            },
         },
     },
 };
@@ -155,13 +170,13 @@ const serviceContent = {
 // Add-ons (always visible) 
 const addOnServices = {
     roof_treatment: {
-        price: 551,
+        price: 274,
         label: "Roof Treatment",
         cover: "../../assets/booking_system_img/roof_treatment.jpg",
         desc: "Moss/mould treatment to extend roof life and improve appearance. Low-pressure application; results develop over weeks.",
     },
     gutter_cleaning: {
-        price: 552,
+        price: 284,
         label: "Gutter Cleaning",
         cover: "../../assets/booking_system_img/gutter_cleaning.jpg",
         desc: "Remove leaves, debris, and blockages. Helps prevent overflow, leaks, and water damage during heavy rain.",
