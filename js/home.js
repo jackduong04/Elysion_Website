@@ -123,16 +123,6 @@ gsap.from(".aio_banner", {
     duration: 0.3
 });
 
-gsap.from(".contact_form_cont", {
-    scrollTrigger: {
-        trigger: ".contact_form_cont",
-        start: "top bottom"
-    },
-    y: 50,
-    opacity: 0,
-    duration: 0.3
-});
-
 gsap.from(".subscription_title", {
     scrollTrigger: {
         trigger: ".subscription_title",
@@ -142,6 +132,7 @@ gsap.from(".subscription_title", {
     opacity: 0,
     duration: 0.3
 });
+
 gsap.from(".subscription_card_cont", {
     scrollTrigger: {
         trigger: ".subscription_card_cont",
